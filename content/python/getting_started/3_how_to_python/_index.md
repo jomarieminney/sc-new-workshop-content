@@ -57,7 +57,7 @@ To perform exponential calculation, say 2 to the power 3, we type:
 8
 ```
 
-Have fun with this for a little while and then get back here. :)
+Have fun with this for a little while and then get back here.
 
 As you can see, Python is a great calculator. If you're wondering what else you can do…
 
@@ -67,8 +67,8 @@ How about your name? Type your first name in quotes like this:
 
 <!-- {% filename %}command-line{% filename %} -->
 ```python
->>> "Ola"
-'Ola'
+>>> "Kate"
+'Kate'
 ```
 
 You've now created your first string! It's a sequence of characters that can be processed by a computer. The string must always begin and end with the same character. This may be single (`'`) or double (`"`) quotes (there is no difference!) The quotes tell Python that what's inside of them is a string.
@@ -77,16 +77,16 @@ Strings can be strung together. Try this:
 
 <!-- {% filename %}command-line{% filename %} -->
 ```python
->>> "Hi there " + "Ola"
-'Hi there Ola'
+>>> "Hi there " + "Kate"
+'Hi there Kate'
 ```
 
 You can also multiply strings with a number:
 
 <!-- {% filename %}command-line{% filename %} -->
 ```python
->>> "Ola" * 3
-'OlaOlaOla'
+>>> "Kate" * 3
+'KateKateKate'
 ```
 
 If you need to put an apostrophe inside your string, you have two ways to do it.
@@ -111,21 +111,21 @@ Nice, huh? To see your name in uppercase letters, try typing:
 
 <!-- {% filename %}command-line{% filename %} -->
 ```python
->>> "Ola".upper()
-'OLA'
+>>> "Kate".upper()
+'Kate'
 ```
 
-You just used the `upper` __method__ on your string! A method (like `upper()`) is a sequence of instructions that Python has to perform on a given object (`"Ola"`) once you call it.
+You just used the `upper` __method__ on your string! A method (like `upper()`) is a sequence of instructions that Python has to perform on a given object (`"Kate"`) once you call it.
 
 If you want to know the number of letters contained in your name, there is a __function__ for that too!
 
 <!-- {% filename %}command-line{% filename %} -->
 ```python
->>> len("Ola")
+>>> len("Kate")
 3
 ```
 
-Wonder why sometimes you call functions with a `.` at the end of a string (like `"Ola".upper()`) and sometimes you first call a function and place the string in parentheses? Well, in some cases, functions belong to objects, like `upper()`, which can only be performed on strings. In this case, we call the function a __method__. Other times, functions don't belong to anything specific and can be used on different types of objects, just like `len()`. That's why we're giving `"Ola"` as a parameter to the `len` function.
+Wonder why sometimes you call functions with a `.` at the end of a string (like `"Kate".upper()`) and sometimes you first call a function and place the string in parentheses? Well, in some cases, functions belong to objects, like `upper()`, which can only be performed on strings. In this case, we call the function a __method__. Other times, functions don't belong to anything specific and can be used on different types of objects, just like `len()`. That's why we're giving `"Kate"` as a parameter to the `len` function.
 
 ### Summary
 
@@ -173,7 +173,7 @@ Let's say we want to create a new variable called `name`:
 
 <!-- {% filename %}command-line{% filename %} -->
 ```python
->>> name = "Ola"
+>>> name = "Kate"
 ```
 
 As you've noticed, your program didn't return anything like it did before. So how do we know that the variable actually exists? Simply enter `name` and hit `enter`:
@@ -181,10 +181,10 @@ As you've noticed, your program didn't return anything like it did before. So ho
 <!-- {% filename %}command-line{% filename %} -->
 ```python
 >>> name
-'Ola'
+'Kate'
 ```
 
-Yippee! Your first variable! :) You can always change what it refers to:
+Yippee! Your first variable! You can always change what it refers to:
 
 <!-- {% filename %}command-line{% filename %} -->
 ```python
@@ -357,12 +357,12 @@ Now, try writing the following command (try substituting your own information, t
 
 <!-- {% filename %}command-line{% filename %} -->
 ```python
->>> participant = {'name': 'Ola', 'country': 'Australia', 'favourite_numbers': [7, 12, 91]}
+>>> participant = {'name': 'Kate', 'country': 'Australia', 'favourite_numbers': [7, 12, 91]}
 ```
 
 With this command, you just created a variable named `participant` with three key–value pairs:
 
-- The key `name` points to the value `'Ola'` (a `string` object),
+- The key `name` points to the value `'Kate'` (a `string` object),
 - `country` points to `'Australia'` (another `string`),
 - and `favourite_numbers` points to `[7, 12, 91]` (a `list` with three numbers in it).
 
@@ -371,7 +371,7 @@ You can check the content of individual keys with this syntax:
 <!-- {% filename %}command-line{% filename %} -->
 ```python
 >>> print(participant['name'])
-Ola
+Kate
 ```
 
 See, it's similar to a list. But you don't need to remember the index – just the name.
@@ -417,7 +417,7 @@ You can use the `pop()` method to delete an item in the dictionary. Say, if you 
 >>> participant.pop('favourite_numbers')
 [7, 12, 91]
 >>> participant
-{'country': 'Australia', 'favourite_language': 'Python', 'name': 'Ola'}
+{'country': 'Australia', 'favourite_language': 'Python', 'name': 'Kate'}
 ```
 
 As you can see from the output, the key–value pair corresponding to the `'favourite_numbers'` key has been deleted.
@@ -428,7 +428,7 @@ As well as this, you can also change a value associated with an already-created 
 ```python
 >>> participant['country'] = 'Germany'
 >>> participant
-{'country': 'Germany', 'favourite_language': 'Python', 'name': 'Ola'}
+{'country': 'Germany', 'favourite_language': 'Python', 'name': 'Kate'}
 ```
 
 As you can see, the value of the key `'country'` has been altered from `'Australia'` to `'Germany'`. :) Exciting? Hurrah! You just learned another amazing thing.
@@ -710,8 +710,8 @@ If 2 were a greater number than 5, then the second command would be executed. Ea
 <!-- {% filename %}python_intro.py{% filename %} -->
 ```python
 name = 'Sonja'
-if name == 'Ola':
-    print('Hey Ola!')
+if name == 'Kate':
+    print('Hey Kate!')
 elif name == 'Sonja':
     print('Hey Sonja!')
 else:
@@ -831,8 +831,8 @@ As you can see, we now gave our function a parameter that we called `name`:
 <!-- {% filename %}python_intro.py{% filename %} -->
 ```python
 def hi(name):
-    if name == 'Ola':
-        print('Hi Ola!')
+    if name == 'Kate':
+        print('Hi Kate!')
     elif name == 'Sonja':
         print('Hi Sonja!')
     else:
@@ -858,7 +858,7 @@ Let's fix it at the bottom of the file:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
 ```python
-hi("Ola")
+hi("Kate")
 ```
 
 And run it again:
@@ -866,7 +866,7 @@ And run it again:
 <!-- {% filename %}command-line{% filename %} -->
 ```
 $ python3 python_intro.py
-Hi Ola!
+Hi Kate!
 ```
 
 And if we change the name?
@@ -884,7 +884,7 @@ $ python3 python_intro.py
 Hi Sonja!
 ```
 
-Now, what do you think will happen if you write another name in there? (Not Ola or Sonja.) Give it a try and see if you're right. It should print out this:
+Now, what do you think will happen if you write another name in there? (Not Kate or Sonja.) Give it a try and see if you're right. It should print out this:
 
 <!-- {% filename %}command-line{% filename %} -->
 ```
@@ -925,7 +925,7 @@ Still remember lists? Let's do a list of girls:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
 ```python
-girls = ['Rachel', 'Monica', 'Phoebe', 'Ola', 'You']
+girls = ['Rachel', 'Monica', 'Phoebe', 'Kate', 'You']
 ```
 
 We want to greet all of them by their name. We have the `hi` function to do that, so let's use it in a loop:
@@ -944,7 +944,7 @@ Here is the full code that will be in the file:
 def hi(name):
     print('Hi ' + name + '!')
 
-girls = ['Rachel', 'Monica', 'Phoebe', 'Ola', 'You']
+girls = ['Rachel', 'Monica', 'Phoebe', 'Kate', 'You']
 for name in girls:
     hi(name)
     print('Next girl')
@@ -961,7 +961,7 @@ Hi Monica!
 Next girl
 Hi Phoebe!
 Next girl
-Hi Ola!
+Hi Kate!
 Next girl
 Hi You!
 Next girl
