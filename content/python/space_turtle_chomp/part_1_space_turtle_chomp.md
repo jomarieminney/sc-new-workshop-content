@@ -35,7 +35,7 @@ An example of a comment is below, try writing the below on the top line. This co
 
 Step 5. Next we need to import the Turtle libraries and set up the screen, we do this by typing:
 
-{{% codecaption title="kbgame1.py" %}}
+
 
 ```python
 import turtle
@@ -45,8 +45,6 @@ turtle.setup(650,650)
 wn = turtle.Screen()
 wn.bgcolor('navy')
 ```
-
-{{% /codecaption %}}
 
 
 `turtle.setup` sets the size of the Turtle game window \(it’s not necessary
