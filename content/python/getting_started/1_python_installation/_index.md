@@ -29,6 +29,7 @@ python3 --version
 py --version
 ```
 {{% /tab %}}
+{{< /tabs >}}
 
 If the command returns `Python 3.Y.Z` congratulations you have Python installed! Otherwise you will have to install Python on your machine. How to do this will vary depending on your system, see below for instructions on how to do this for some common systems.
 
@@ -131,6 +132,7 @@ If you install an older version of Python, the installation screen may look a bi
 
 ![Add Python to the Path, older versions](images/add_python_to_windows_path.png)
 {{% /tab %}}
+{{< /tabs >}}
 
 ## Install on Windows
 
