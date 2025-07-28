@@ -49,6 +49,7 @@ You need to go to the website https://www.python.org/downloads/ and download the
 * Download the *Mac OS X 64-bit/32-bit installer* file,
 * Double click *python-3.x.x-macosx10.x.pkg* to run the installer.
 
+{{% /tab %}}
 {{% tab title="_**Linux**_" %}}
 It is very likely that you already have Python installed out of the box. To check if you have it installed (and which version it is), open a console and type the following command:
 
