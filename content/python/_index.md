@@ -6,8 +6,6 @@ chapter = true
 pre = "<i class='fab fa-python'></i>&nbsp; "
 +++
 
-# Python
-
 What is Python?
 
 Python is a very popular programming

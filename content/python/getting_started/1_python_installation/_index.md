@@ -29,6 +29,7 @@ python3 --version
 py --version
 ```
 {{% /tab %}}
+{{< /tabs >}}
 
 If the command returns `Python 3.Y.Z` congratulations you have Python installed! Otherwise you will have to install Python on your machine. How to do this will vary depending on your system, see below for instructions on how to do this for some common systems.
 
@@ -49,6 +50,7 @@ You need to go to the website https://www.python.org/downloads/ and download the
 * Download the *Mac OS X 64-bit/32-bit installer* file,
 * Double click *python-3.x.x-macosx10.x.pkg* to run the installer.
 
+{{% /tab %}}
 {{% tab title="_**Linux**_" %}}
 It is very likely that you already have Python installed out of the box. To check if you have it installed (and which version it is), open a console and type the following command:
 
@@ -130,6 +132,7 @@ If you install an older version of Python, the installation screen may look a bi
 
 ![Add Python to the Path, older versions](images/add_python_to_windows_path.png)
 {{% /tab %}}
+{{< /tabs >}}
 
 ## Install on Windows
 
