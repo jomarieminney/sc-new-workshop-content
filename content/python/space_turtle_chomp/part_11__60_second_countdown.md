@@ -3,7 +3,7 @@ title = "60 second, countdown!"
 date = 2021-02-04T20:22:00+08:00
 weight = 110
 chapter = true
-pre = "<b>11. </b>"
+pre = ""
 +++
 
 ### Part 11

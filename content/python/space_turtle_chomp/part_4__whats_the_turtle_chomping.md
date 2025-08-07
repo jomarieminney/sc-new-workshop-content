@@ -3,7 +3,7 @@ title = "What's the turtle chomping?"
 date = 2021-01-25T14:55:24+08:00
 weight = 40
 chapter = true
-pre = "<b>4. </b>"
+pre = ""
 +++
 
 ### Part 4

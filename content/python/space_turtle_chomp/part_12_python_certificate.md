@@ -2,7 +2,7 @@
 title = "Get your Certificate!"
 weight = 110
 chapter = true
-pre = "<b>12. </b>"
+pre = ""
 +++
 
 

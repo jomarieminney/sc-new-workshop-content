@@ -3,7 +3,7 @@ title = "Setting the boundaries for cabbage"
 date = 2021-01-25T14:55:24+08:00
 weight = 60
 chapter = true
-pre = "<b>6. </b>"
+pre = ""
 +++
 
 ### Part 6

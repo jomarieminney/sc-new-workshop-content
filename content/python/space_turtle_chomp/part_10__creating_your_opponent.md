@@ -3,7 +3,7 @@ title = "Creating your opponent"
 date = 2021-02-04T20:09:00+08:00
 weight = 100
 chapter = true
-pre = "<b>10. </b>"
+pre = ""
 +++
 
 ### Part 10

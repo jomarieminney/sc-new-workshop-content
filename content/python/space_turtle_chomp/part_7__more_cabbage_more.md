@@ -3,7 +3,7 @@ title = "More cabbage, more!"
 date = 2021-02-04T18:39:00+08:00
 weight = 70
 chapter = true
-pre = "<b>7. </b>"
+pre = ""
 +++
 
 ### Part 7

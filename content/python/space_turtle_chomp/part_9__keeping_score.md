@@ -3,7 +3,7 @@ title = "Keeping score"
 date = 2021-02-04T20:02:00+08:00
 weight = 90
 chapter = true
-pre = "<b>9. </b>"
+pre = ""
 +++
 
 ### Part 9

@@ -3,7 +3,7 @@ title = "Turn baby turn"
 date = 2021-01-25T14:55:24+08:00
 weight = 20
 chapter = true
-pre = "<b>2. </b>"
+pre = ""
 +++
 
 ### Part 2
