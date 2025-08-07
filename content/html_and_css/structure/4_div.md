@@ -24,7 +24,7 @@ Let's wrap our `h1` and `img` elements in a `div` tag:
 </header>
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The image and header text should now be side by side.
 

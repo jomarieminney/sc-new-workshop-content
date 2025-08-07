@@ -14,7 +14,7 @@ It usually contains the copyright information or navigational elements.
 +</footer>
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The footer will have a peach background.
 

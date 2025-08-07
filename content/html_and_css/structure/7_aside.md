@@ -31,7 +31,7 @@ We'll move our three images into an `aside`:
 </main>
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The three images will have a lighter background than the `main` and be on the right.
 

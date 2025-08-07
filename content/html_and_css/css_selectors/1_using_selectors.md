@@ -43,7 +43,7 @@ body {
 +}
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The text should now be blue.
 
@@ -73,7 +73,7 @@ p {
 
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The top left box should now be pink.
 
@@ -112,7 +112,7 @@ p {
 +}
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The bottom boxes should now be yellow.
 
@@ -128,7 +128,7 @@ This should be the final result:
 
 ![](../../images/boxes_complete.png)
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Try changing the background colour of box 2 only.
 

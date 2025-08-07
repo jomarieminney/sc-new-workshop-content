@@ -19,7 +19,7 @@ Let's wrap our nav, h1 and image in the header:
 +</header>
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The background of the header should appear pink.
 

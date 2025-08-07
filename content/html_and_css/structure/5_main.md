@@ -29,7 +29,7 @@ As per the others, let's wrap our `h2` and `h3` headings, paragraphs and images 
 +</main>
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The content in the main should have a purple background.
 

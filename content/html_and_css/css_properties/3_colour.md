@@ -18,7 +18,7 @@ nav {
 }
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The nav element should turn blue.
 
@@ -35,7 +35,7 @@ There are several different ways of representing colours in CSS.
 For example, there are some **name colours**.
 The hex code we've used also has the name `skyblue`.
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Try changing the `background-color` to use `skyblue` instead of the hex code.
 
@@ -66,25 +66,25 @@ nav {
 +}
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The background colour behind the cards should be purple.
 
 {{% /notice %}}
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Change the background colour of each card to `white`. Bonus: can you find the hex code for `white`?
 
 {{% /notice %}}
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Change the background colour of the each column in `section-5`.
 
 {{% /notice %}}
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Change the background colour of the `footer`.
 

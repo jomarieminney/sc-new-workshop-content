@@ -27,7 +27,7 @@ Add the following your CSS:
 +}
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The nav text should now be on the right.
 
@@ -39,7 +39,7 @@ As we go through this tutorial, you'll start to see that every CSS property has 
 
 {{% /notice %}}
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add CSS to set the `header` and `main` elements' `text-align` property to `center`.
 
@@ -59,7 +59,7 @@ Add the following to your CSS:
 }
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The cards should now be side by side.
 
@@ -96,7 +96,7 @@ Add the following to your CSS to vertically align them next to each other:
 }
 ```
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Modify the `.column` elements to be `inline-block`.
 

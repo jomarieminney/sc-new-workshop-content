@@ -20,7 +20,7 @@ Let's wrap our three links in opening and closing `nav` tags:
 </header>
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The background of the nav should appear as darker pink.
 The links should be on the right, each with a white background.

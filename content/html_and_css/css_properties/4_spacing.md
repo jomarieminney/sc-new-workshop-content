@@ -27,7 +27,7 @@ nav {
 }
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 There will now be more space in the nav around the text.
 
@@ -51,7 +51,7 @@ nav {
 +}
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 There should now be a gap between the nav and the image.
 
@@ -79,7 +79,7 @@ header div {
 +}
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 There will now be a gap between the images and `section-3`.
 
@@ -108,13 +108,13 @@ First, let's add padding to the section itself:
 }
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 There will now be space between the edge of the purple background and the white cards.
 
 {{% /notice %}}
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add `20px` of padding to each of the cards.
 
@@ -122,13 +122,13 @@ Add `20px` of padding to each of the cards.
 
 ## Step 5
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 For `section-4` and each `.column`, add `20px` of `padding` to the top and bottom, and `0px` of `padding` to the left and right.
 
 {{% /notice %}}
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add `10px` of `padding` to the footer.
 
@@ -157,7 +157,7 @@ Try adding the following to your CSS:
 }
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 There should now be space between the cards. Try changing `10px` to a larger number to make it easier to see if necessary.
 

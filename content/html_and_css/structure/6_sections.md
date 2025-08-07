@@ -30,7 +30,7 @@ We'll add two sections to our page, one for "Anatomy and Physiology" and one for
 </main>
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The two sections will have a lighter purple background, compared to the main.
 

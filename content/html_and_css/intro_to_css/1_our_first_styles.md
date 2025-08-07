@@ -29,7 +29,7 @@ body {
 }
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The page should turn orange!
 

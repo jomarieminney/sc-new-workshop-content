@@ -24,7 +24,7 @@ The tag selector will get every `img` element.
 The `height` property changes the height of an element by whatever value you provide - in this case, we've specified 100 pixels (`px`).
 
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 Every image on the page should now have the same height.
 
@@ -55,7 +55,7 @@ To do this, we can combine the header and image selectors, like so:
 
 We read this like: "select all the `img` tags that are in the `header` tag.
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 Only the first image will be `100px` in height, and the rest will return to their default sizes.
 
@@ -90,7 +90,7 @@ header img {
 +}
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The next two images will be `200px` wide.
 
@@ -155,7 +155,7 @@ Add the following to your CSS to now resize the images:
 +}
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The images in the cards should now all be the same height.
 
@@ -190,7 +190,7 @@ Let's modify our CSS to also set the width of the cards and their images.
 }
 ```
 
-{{% notice test %}}
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 The images should now be as wide as the cards.
 
@@ -204,7 +204,7 @@ Our cards aren't side by side like they are in the preview - don't worry! We'll 
 
 ## Step 6
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 This one is a challenge for you!
 Find the image in the section with id `section-4` and set its `width` to `400px`.
@@ -233,7 +233,7 @@ Let's take a look at the structure of the HTML:
 Each of these images is in a `div` with class `column`.
 Eventually, these columns will be side by side, which means they need to be `50%` wide each in order to fit beside each other.
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Set the `width` of the divs with the `column` class to `50%`.
 
@@ -241,7 +241,7 @@ Set the `width` of the divs with the `column` class to `50%`.
 
 We will then resize the images inside of these columns.
 
-${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 For images inside the divs with the `column` class: set their `height` to `200px` and their `width` to `80%`.
 
