@@ -1,6 +1,6 @@
 +++
 title = "Collisions become a function"
-date = 2021-01-25T14:55:24+08:00
+date = 2025-08-07T10:00:00+08:00
 weight = 50
 chapter = true
 pre = ""

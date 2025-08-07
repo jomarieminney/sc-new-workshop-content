@@ -1,6 +1,6 @@
 +++
 title = "How to Python"
-date = 2021-02-04T20:42:00+08:00
+date = 2025-08-07T10:00:00+08:00
 weight = 30
 chapter = true
 pre = ""
