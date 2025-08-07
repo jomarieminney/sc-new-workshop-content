@@ -1,7 +1,7 @@
 ---
 title: "Cupcake Smash"
 weight: 2
-pre: "<i class='fab fa-js'></i>&nbsp; "
+pre: "<i class='fab fa-js-square'></i>&nbsp; "
 ---
 
 Welcome to our She Codes Australia One Day Workshop. We've put together a fun little tutorial to give you a coding taster for a mini game. 
