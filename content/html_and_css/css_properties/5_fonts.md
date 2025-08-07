@@ -48,7 +48,7 @@ Let's style our headings with your selected font:
 +}
 ```
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Find another font to use for the nav, footer and paragraphs.
 
@@ -69,7 +69,7 @@ h1 {
 }
 ```
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Change the font size of the `h2`, `h3`, and `p` tags.
 
@@ -95,7 +95,7 @@ The colour of the `a` tags in the `nav` should turn white.
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Change the colour of the `h1`, `h2` and `h3` headings.
 

@@ -41,14 +41,14 @@ The code below represents an unordered list:
 This would render the following:
 ![The resulting webpage from the unordered list code snippet.](../../images/unordered_list.png)
 
-{{% notice challenge %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add an ordered list to your page.
 [Here\'s a list of turtle species](https://www.britannica.com/topic/list-of-turtles-2073117) if you need some content inspiration.
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add an unordered list to your page.
 [Here\'s some information about where turtles are found](https://animals.net/turtle/) if you need some content for inspiration.

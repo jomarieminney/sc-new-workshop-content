@@ -86,7 +86,7 @@ Try changing your CSS to use a gradient behind the cards:
 }
 ```
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Have a play with the direction and colours of the gradient.
 Here's a cool [tool for creating gradients](https://cssgradient.io/) if you need inspiration.
@@ -117,7 +117,7 @@ header img {
 }
 ```
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Try adding text or box shadows to other elements!
 Here's a [handy tool for generating shadows](https://webcode.tools/generators/css/box-shadow).

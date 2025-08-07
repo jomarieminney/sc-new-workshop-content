@@ -24,7 +24,7 @@ The above html looks like this when rendered:
 
 ![The resulting webpage from the comment code snippet.](../../images/myrtle_headings.png)
 
-{{% notice challenge %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add comments to your code to explain what each line of code does.
 

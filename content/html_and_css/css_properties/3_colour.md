@@ -35,7 +35,7 @@ There are several different ways of representing colours in CSS.
 For example, there are some **name colours**.
 The hex code we've used also has the name `skyblue`.
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Try changing the `background-color` to use `skyblue` instead of the hex code.
 
@@ -72,19 +72,19 @@ The background colour behind the cards should be purple.
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Change the background colour of each card to `white`. Bonus: can you find the hex code for `white`?
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Change the background colour of the each column in `section-5`.
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Change the background colour of the `footer`.
 

@@ -114,7 +114,7 @@ There will now be space between the edge of the purple background and the white 
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add `20px` of padding to each of the cards.
 
@@ -122,13 +122,13 @@ Add `20px` of padding to each of the cards.
 
 ## Step 5
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 For `section-4` and each `.column`, add `20px` of `padding` to the top and bottom, and `0px` of `padding` to the left and right.
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add `10px` of `padding` to the footer.
 

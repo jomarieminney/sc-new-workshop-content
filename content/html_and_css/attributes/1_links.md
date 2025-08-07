@@ -21,7 +21,7 @@ The above HTML would render like so:
 [Read more about turtles here.](https://en.wikipedia.org/wiki/Turtle)
 
 
-{{% notice challenge %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add at least one link to another website to your page.
 

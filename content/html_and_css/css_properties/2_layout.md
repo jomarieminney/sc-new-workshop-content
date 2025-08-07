@@ -39,7 +39,7 @@ As we go through this tutorial, you'll start to see that every CSS property has 
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add CSS to set the `header` and `main` elements' `text-align` property to `center`.
 
@@ -96,7 +96,7 @@ Add the following to your CSS to vertically align them next to each other:
 }
 ```
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Modify the `.column` elements to be `inline-block`.
 

@@ -25,20 +25,20 @@ You should see a thin black border appear around the first image.
 
 `border: 1px solid #000;` is short hand for "create a border that is `1px` wide, solid and black.
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Try changing the width and colour of the border.
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 There are several different border styles - [here\'s a list of them](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style).
 Try changing the style of the border.
 
 {{% /notice %}}
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add a border to each card.
 

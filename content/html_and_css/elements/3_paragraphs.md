@@ -20,7 +20,7 @@ This should be the resulting page:
 
 ![Screenshot of webpage with paragraph elements.](../../images/myrtle_paragraphs.png)
 
-{{% notice challenge %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add a paragraph to each sub section on your page.
 

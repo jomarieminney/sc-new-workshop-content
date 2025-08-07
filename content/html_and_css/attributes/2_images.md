@@ -28,7 +28,7 @@ Here are three image URLs to use for this challenge:
 - <a href="https://assets.codepen.io/5804361/turtle_2.jpg" target="_blank">Turtle 2</a>
 - <a href="https://assets.codepen.io/5804361/turtle_3.jpg" target="_blank">Turtle 3</a>
 
-{{% notice challenge %}}
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Add the three images listed above to your webpage.
 

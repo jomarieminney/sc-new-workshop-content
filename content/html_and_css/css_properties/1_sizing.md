@@ -204,7 +204,7 @@ Our cards aren't side by side like they are in the preview - don't worry! We'll 
 
 ## Step 6
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 This one is a challenge for you!
 Find the image in the section with id `section-4` and set its `width` to `400px`.
@@ -233,7 +233,7 @@ Let's take a look at the structure of the HTML:
 Each of these images is in a `div` with class `column`.
 Eventually, these columns will be side by side, which means they need to be `50%` wide each in order to fit beside each other.
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Set the `width` of the divs with the `column` class to `50%`.
 
@@ -241,7 +241,7 @@ Set the `width` of the divs with the `column` class to `50%`.
 
 We will then resize the images inside of these columns.
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 For images inside the divs with the `column` class: set their `height` to `200px` and their `width` to `80%`.
 

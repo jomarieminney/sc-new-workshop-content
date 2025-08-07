@@ -128,7 +128,7 @@ This should be the final result:
 
 ![](../../images/boxes_complete.png)
 
-{{% notice challenge %}}
+${{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
 Try changing the background colour of box 2 only.
 
