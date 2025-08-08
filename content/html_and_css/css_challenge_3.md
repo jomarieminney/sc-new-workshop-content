@@ -1,8 +1,10 @@
 ---
-title: "Challenge 3"
-weight: 1
+title: "CSS Challenge 3"
+weight: 10
 chapter: false
 ---
+
+Now that you've learned the fundamentals for coding with HTML and CSS, let's get started on some challenges!
 
 We've created most of the following page:
 
