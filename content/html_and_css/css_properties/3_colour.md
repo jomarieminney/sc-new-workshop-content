@@ -9,14 +9,28 @@ This will also help us to see where one section ends and another starts.
 
 Add the following
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```css
 /* Your CSS here */
 
 nav {
 	text-align: right;
-+	background-color: #87CEEB;
+
 }
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```css
+/* Your CSS here */
+
+nav {
+	text-align: right;
+	background-color: #87CEEB;
+}
+```
+{{% /notice %}}
 
 {{% notice style="warning" title="Test" icon="vial" %}}
 
@@ -53,7 +67,8 @@ For the full list of named colours [check out this site,](https://htmlcolorcodes
 
 Let's get back to our CSS!
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```css
 /* Your CSS here */
 
 nav {
@@ -61,10 +76,25 @@ nav {
 	background-color: #87CEEB;
 }
 
-+#section-3 {
-+	background-color: #885A89;
-+}
+
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```css
+/* Your CSS here */
+
+nav {
+	text-align: right;
+	background-color: #87CEEB;
+}
+
+#section-3 {
+	background-color: #885A89;
+}
+```
+{{% /notice %}}
 
 {{% notice style="warning" title="Test" icon="vial" %}}
 
