@@ -16,6 +16,8 @@ There are lots of different CSS properties available, and we are going to use a 
 
 ![Screenshot of completed webpage.](../images/animals_complete.jpeg)
 
-[Fork the template on CodePen.](https://codepen.io/shecodesaus/pen/JjOezbg)
+{{% notice style="info" title="Let's Get Started!" icon="lightbulb" %}}
+Ready to dive in and start building? Fork the template on CodePen to get started:
 
-
+[Fork the template on CodePen](https://codepen.io/shecodesaus/pen/JjOezbg)
+{{% /notice %}}

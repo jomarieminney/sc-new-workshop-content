@@ -1,6 +1,6 @@
 ---
 title: "CSS Challenges"
-weight: 9
+weight: 10
 chapter: false
 ---
 
