@@ -1,5 +1,5 @@
 ---
-title: "Getting Started"
+title: "HTML Getting Started"
 weight: 1
 chapter: true
 ---

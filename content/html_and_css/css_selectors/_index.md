@@ -1,6 +1,6 @@
 ---
 title: "CSS Selectors"
-weight: 7
+weight: 8
 chapter: false
 ---
 

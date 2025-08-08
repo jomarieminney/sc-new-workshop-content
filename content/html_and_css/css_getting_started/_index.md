@@ -1,6 +1,6 @@
 ---
-title: "Intro to CSS"
-weight: 6
+title: "CSS Getting Started"
+weight: 7
 chapter: false
 ---
 

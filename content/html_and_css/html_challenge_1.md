@@ -1,14 +1,16 @@
 ---
-title: "Challenge 1"
-weight: 1
+title: "HTML Challenge 1"
+weight: 5
 chapter: false
 ---
+
+Now that you've learned the fundamentals for coding with HTML, let's get started on some challenges!
 
 For this challenge, we will give you most of the HTML, and you'll need to fill in some missing elements and content.
 
 Here's a preview of the end product:
 
-![Screenshot of website about hula hooping.](../../images/hoops.png)
+![Screenshot of website about hula hooping.](../images/hoops.png)
 
 Go ahead and fork the
 [template on CodePen.](https://codepen.io/shecodesaus/pen/ZEaqgWb)
