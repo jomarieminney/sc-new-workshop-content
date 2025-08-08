@@ -1,6 +1,6 @@
 ---
 title: "PDF Certificate-HTML/CSS"
-weight: 11
+weight: 12
 chapter: false
 ---
 
@@ -22,6 +22,7 @@ Get your Certificate!
     <input type="hidden" name="act" value="sub" />
     <input type="hidden" name="v" value="2" />
     <input type="hidden" name="or" value="8477a0cecf939eafb8e8f74791ed2d43" />
+    <input type="hidden" name="tags" value="Completed Tutorial - HTML & CSS" />
     <div class="_form-content">
       <div class="_form_element _x99529096 _inline-style _clear" >
         <div class="_form-title">
@@ -60,7 +61,7 @@ Get your Certificate!
         </div>
       </div>
       <div class="_button-wrapper _inline-style">
-        <input id="_form_16_submit" class="_submit" type="button"  value="Download" >
+        <input id="_form_16_submit" class="_submit" type="submit"  value="Download" >
         </input>
       </div>
       <div class="_clear-element">
@@ -74,22 +75,82 @@ Get your Certificate!
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 
 <script>
-document.getElementById("_form_16_submit").addEventListener('click', function(){
+// Function to generate PDF certificate
+function generateCertificate() {
+    const firstName = document.getElementById('firstname').value;
+    const lastName = document.getElementById('lastname').value;
+    
+    if (!firstName || !lastName) {
+        alert('Please enter both first and last name to generate certificate');
+        return;
+    }
+    
+    const doc = new jsPDF({
+        orientation: "landscape",
+        unit: "mm",
+        format: "a4"
+    });
+    const image = new Image();
+    image.src = "./HTMLCSS_Certificate.png";
+    
+    image.onload = function() {
+        doc.addImage(image, "png", 0, 0, 297, 210);
+        doc.setFontSize(22);
+        doc.text(`${firstName} ${lastName}`, 150, 80, 'center');
+        doc.save("She Codes Australia Certificate");
+    };
+    
+    // Fallback if image doesn't load
+    image.onerror = function() {
+        doc.setFontSize(22);
+        doc.text(`${firstName} ${lastName}`, 150, 80, 'center');
+        doc.text('HTML & CSS Certificate', 150, 100, 'center');
+        doc.save("She Codes Australia Certificate");
+    };
+}
 
-const firstName=document.getElementById('firstname').value;
-const lastName=document.getElementById('lastname').value;
-const doc = new jsPDF({
-  orientation: "landscape",
-  unit: "mm",
-  format: "a4"
-});
-const image=new Image();
-image.src = "./HTMLCSS Certificate (1).png";
+// Method 1: ActiveCampaign success callback (for form submission)
+window._form_callback = function(id) {
+    if (id === 16) {
+        generateCertificate();
+    }
+};
 
-doc.addImage(image, "png", 0,0,297,210);
-doc.setFontSize(22);
-doc.text(`${firstName} ${lastName}`, 150, 80, 'center');
-doc.save("She Codes Australia Certificate");
+// Method 2: Direct button click (fallback/immediate generation)
+document.addEventListener('DOMContentLoaded', function() {
+    // URL parameter pre-filling for email links
+    const urlParams = new URLSearchParams(window.location.search);
+    const firstName = urlParams.get('firstname');
+    const lastName = urlParams.get('lastname');
+    
+    if (firstName) {
+        document.getElementById('firstname').value = decodeURIComponent(firstName);
+    }
+    if (lastName) {
+        document.getElementById('lastname').value = decodeURIComponent(lastName);
+    }
+    
+    // AUTO-DOWNLOAD: If both names are provided via URL, generate certificate automatically
+    if (firstName && lastName) {
+        // Small delay to ensure page loads completely
+        setTimeout(function() {
+            generateCertificate();
+            // Hide the form and show a success message
+            document.querySelector('._form-content').style.display = 'none';
+            document.querySelector('._form-thank-you').innerHTML = 
+                '<h3>Your certificate is downloading!</h3><p>Your personalised HTML & CSS certificate should appear in your downloads folder.</p><br><button onclick="generateCertificate()" style="background:#8246AF; color:white; padding:10px 20px; border:none; border-radius:4px; cursor:pointer;">Download Again</button>';
+            document.querySelector('._form-thank-you').style.display = 'block';
+        }, 500);
+    }
+    
+    // Add click listener for manual PDF generation when form is visible
+    const submitBtn = document.getElementById('_form_16_submit');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function(e) {
+            // Generate PDF immediately (don't wait for form submission)
+            generateCertificate();
+        });
+    }
 });
 </script>
 
