@@ -1,34 +1,46 @@
 ---
 title: "How to use this tutorial"
+date: 2025-08-07
 weight: 3
-chapter: false
 ---
 
 Before we get too ahead of ourselves, here are a couple quick instructions for how to use this tutorial.
 
 A code block like this:
 
-```html
+```html {title="html"}
 <h1>Myrtle the Turtle</h1>
 ```
 
 means you need to add brand new code to your editor.
 
-A code block like this:
+A code update will be shown in two steps:
 
-```diff
--<h1>Myrtle the Turtle</h1>
-+<h1>Flippy the Turtle</h1>
+###### 1. This is the code you already have in your editor:
+
+{{% notice style="warning" title="Before - Replace this code" %}}
+```html
+<h1>Myrtle the Turtle</h1>
 ```
+{{% /notice %}}
 
-Means that you need to update your existing code.
+###### 2. This is the updated version of the code:
+Replace the “Before” code in your editor with this new code. You can use the copy button in the top right of the box to copy it without any extra symbols.
 
-The first line has a `-` at the start of it, meaning this line needs to be removed.
+{{% notice style="tip" title="After - Updated code" %}}
+```html
+<h1>Flippy the Turtle</h1>
+```
+{{% /notice %}}
 
-The seond line has a `+` at the start of it, meaning this line needs to be added.
+When you see a **Before** and **After** pair, it means you are replacing existing code with an updated version.
 
 {{% notice tip %}}
+Look out for the label at the top-left of each code box.
+{{% /notice %}}
 
-Look out for whether a code block says `html` or `diff` at the top. An `html` block is new code, a `diff` block is modifying existing code.
+Every time you see a new code example, save your files and refresh your browser to see the changes take effect!
 
+{{% notice warning %}}
+Remember to save your files before refreshing your browser to see changes.
 {{% /notice %}}
