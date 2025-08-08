@@ -1,7 +1,7 @@
 ---
 title: "Variables & Functions"
 weight: 2
-chapter: true
+chapter: false
 ---
 
 ## Creating our Variables
@@ -42,7 +42,6 @@ In particular we'll be using the `querySelector` and `querySelectorAll` function
 If you already know some basic HTML & CSS, you'll already be familiar with CSS Selectors such as Classes and ID's, which is what the [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) and [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) functions use. If you're new to this, don't stress about it too much - we'll be telling you which selectors to use, and you can find out more about them by taking [our HTML/CSS tutorial](https://tutorials.shecodes.com.au/html_and_css_intro/) when you've got more time! For now, all you need to know is that we are going to using 'hole' and 'score' to define our variables.
 
 <br/>
-
 
 The following code creates two new variables, called `holes` and `scoreBoard`. Copy and paste this code below the `timeUp` variable that we created earlier:
 

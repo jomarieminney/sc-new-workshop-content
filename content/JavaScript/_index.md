@@ -15,8 +15,19 @@ A preview of the end result is below:
 <!-- We need an updated gif once the Template has been changed -->
 ![](fullgame.gif)
 
-Ready to get started? Awesome! Proceed to Step 1.
+**New to coding?** Watch the video below first for a quick intro to the three languages that power websites - HTML, CSS and JavaScript!
 
-New to coding? No problem! Let's begin with a short video about HTML, CSS and JavaScript, the three programming languages that we use to build websites and will be referencing throughout this tutorial.
+**Already know the basics?** Jump straight into [Getting Started →](getting_started/) and let's build this game!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gT0Lh1eYk78?si=PQL5jqUN5_1NFhWh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+    <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+        src="https://www.youtube.com/embed/gT0Lh1eYk78?si=PQL5jqUN5_1NFhWh" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+</div>
+
+**After watching the video?** Perfect! Now [let's get started →](getting_started/) with building your cupcake smashing game!
