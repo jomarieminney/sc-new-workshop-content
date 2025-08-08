@@ -18,7 +18,7 @@ A sub-heading under ‘Values’ would use an `h3` heading element.
 
 For example:
 
-```html
+```html {title="html"}
 <h1>Myrtle the Turtle</h1>
 
 <h2>Anatomy and Physiology</h2>

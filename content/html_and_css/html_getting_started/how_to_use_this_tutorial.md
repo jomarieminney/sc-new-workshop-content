@@ -4,7 +4,7 @@ date: 2025-08-07
 weight: 3
 ---
 
-Before we get too ahead of ourselves, here are a couple quick instructions for how to use this tutorial.
+Before we get too ahead of ourselves, here are a couple of quick instructions for how to use this tutorial.
 
 A code block like this:
 

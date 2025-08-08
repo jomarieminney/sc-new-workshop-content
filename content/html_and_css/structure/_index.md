@@ -10,7 +10,7 @@ We can also use HTML elements to give the browser information about the structur
 One of the reasons we're using Codepen is because it takes care of a lot of the work for us in setting up the HTML page.
 But when we start from scratch, the first element we need to include on our page is the `html` element, and all our website content will go inside that element.
 
-```html
+```html {title="html"}
 <html>
     <!-- Page content goes here -->
 </html>
@@ -19,7 +19,7 @@ But when we start from scratch, the first element we need to include on our page
 Inside this, we have our `head` element, which we can use to give the browser information about our webpage.
 Content in the `head` won’t appear on the page, but it is where we can give information to the browser (in a format it can understand) about things like the page title and any external code that needs to be loaded.
 
-```html
+```html {title="html"}
 <html>
     <head>
         <!-- There is info for the browser here -->
@@ -30,7 +30,7 @@ Content in the `head` won’t appear on the page, but it is where we can give in
 Most of our content goes inside the `body` element.
 This is content for the user which is typically visible in the browser.
 
-```html
+```html {title="html"}
 <html>
     <head>
         <!-- There is info for the browser here -->

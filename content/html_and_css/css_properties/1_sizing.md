@@ -10,13 +10,12 @@ The images on our page are all enormous, so let's start by learning how to speci
 
 Add the following to your CSS:
 
-
-```diff
+```css {title="css"}
 /* Your CSS here */
 
-+img {
-+	height: 100px;
-+}
+img {
+	height: 100px;
+}
 
 ```
 
@@ -44,14 +43,27 @@ Instead of setting the height of *every* image to `100px`, let's only set the he
 
 To do this, we can combine the header and image selectors, like so:
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```css
 /* Your CSS here */
 
--img {
-+header img {
+img {
 	height: 100px;
 }
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```css
+/* Your CSS here */
+
+
+header img {
+	height: 100px;
+}
+```
+{{% /notice %}}
 
 We read this like: "select all the `img` tags that are in the `header` tag.
 
@@ -65,7 +77,7 @@ Only the first image will be `100px` in height, and the rest will return to thei
 
 Working our way down, the next section has two images:
 
-```html
+```html {title="html"}
 <section class="row" id="section-2">
     <h2>Popular Photos</h2>
     <div>
@@ -78,17 +90,32 @@ Working our way down, the next section has two images:
 These images are both in a `div`, then in a `section` with id `section-2`.
 Just as we did earlier, we can combine these selectors to specify only these two images:
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```css
 /* Your CSS here */
 
 header img {
 	height: 100px;
 }
 
-+#section-2 div img {
-+	width: 200px;
-+}
+
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```css
+/* Your CSS here */
+
+header img {
+	height: 100px;
+}
+
+#section-2 div img {
+	width: 200px;
+}
+```
+{{% /notice %}}
 
 {{% notice style="warning" title="Test" icon="vial" %}}
 
@@ -105,7 +132,7 @@ They are in white boxes, and each have a heading and paragraph to go with them:
 
 Let's take a look at the HTML to see the structure of this part of the page:
 
-```html
+```html {title="html"}
 <section class="row" id="section-3">
     <div class="card">
         <img src="" />
@@ -131,29 +158,55 @@ From the HTML above we can see that each box is in a `div` with the class `card`
 
 Add a height to each of these cards:
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```css
 #section-2 div img {
 	width: 200px;
 }
 
-+.card {
-+	height: 250px;
-+}
+
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```css
+#section-2 div img {
+	width: 200px;
+}
+
+.card {
+	height: 250px;
+}
+```
+{{% /notice %}}
 
 Well, that definitely did something, but it did not resize the images.
 
 Add the following to your CSS to now resize the images:
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```css
 .card {
 	height: 250px;
 }
 
-+.card img {
-+	height: 40%;
-+}
+
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```css
+.card {
+	height: 250px;
+}
+
+.card img {
+	height: 40%;
+}
+```
+{{% /notice %}}
 
 {{% notice style="warning" title="Test" icon="vial" %}}
 
@@ -178,17 +231,34 @@ Try removing `height: 250px` from the `.card` to see this for yourself!
 So far we have just been setting the height, but we can actually set the width using the same format.
 Let's modify our CSS to also set the width of the cards and their images.
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```css
 .card {
 	height: 250px;
-+	width: 25%;   
+  
 }
 
 .card img {
 	height: 40%;
-+   width: 100%;
+
 }
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```css
+.card {
+	height: 250px;
+	width: 25%;   
+}
+
+.card img {
+	height: 40%;
+   width: 100%;
+}
+```
+{{% /notice %}}
 
 {{% notice style="warning" title="Test" icon="vial" %}}
 
@@ -217,7 +287,7 @@ The last section is `section-5` and has two images side by side.
 
 Let's take a look at the structure of the HTML:
 
-```html
+```html {title="html"}
 <section class="row" id="section-5">
     <div class="column" id="left-column">
         <h2>Reptiles</h2>

@@ -13,7 +13,7 @@ This lets us write notes to ourselves about what some code means and what it doe
 
 A comment looks like this:
 
-```html
+```html {title="html"}
 <h1>Myrtle the Turtle</h1>
 <!-- This is a comment to myself -->
 <h2>Anatomy and Physiology</h2>

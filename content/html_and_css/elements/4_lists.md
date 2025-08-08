@@ -11,7 +11,7 @@ There is the `<ul>` or `<ol>` element itself, and then **list items** (`<li>`) i
 
 For example, the code below represents an ordered list:
 
-```html
+```html {title="html"}
 <h1>HTML and CSS Workshop</h1>
 
 <ol>
@@ -27,7 +27,7 @@ This would render the following:
 
 The code below represents an unordered list:
 
-```html
+```html {title="html"}
 <h1>HTML and CSS Workshop</h1>
 
 <ul>

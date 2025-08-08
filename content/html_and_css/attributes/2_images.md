@@ -15,7 +15,7 @@ The image element is a self closing element, and has the tagname `img`.
 
 We can use the following html to add an image to a webpage:
 
-```html
+```html {title="html"}
 <img src="link/to/image" />
 ```
 

@@ -10,7 +10,7 @@ We use the paragraph element when we want to display a block of text.
 
 For example:
 
-```html
+```html {title="html"}
 <h3>Size</h3>
 
 <p>The size of a turtle varies depending on it's species, age, diet, gender, habitat and UV light.</p>

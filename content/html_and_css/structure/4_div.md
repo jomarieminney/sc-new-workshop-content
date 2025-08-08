@@ -9,20 +9,37 @@ Instead, this element is used to group other elements.
 
 Let's wrap our `h1` and `img` elements in a `div` tag:
 
-```diff
-
+{{% notice style="warning" title="Before - Replace this code" %}}
+```html
 <header>
   <nav>
     <a href="https://en.wikipedia.org/wiki/Turtle">Wikipedia</a>
     <a href="https://www.worldwildlife.org/species/sea-turtle">WWF</a>
     <a href="https://www.britannica.com/animal/turtle-reptile">Britannica</a>
   </nav>
-+  <div>
+
     <img src="https://assets.codepen.io/5804361/Myrtle_Game.gif" alt="Gif of computer game with turtle moving around a grid."/>
     <h1>Myrtle the Turtle</h1>
-+  </div>
+
 </header>
 ```
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```html
+<header>
+  <nav>
+    <a href="https://en.wikipedia.org/wiki/Turtle">Wikipedia</a>
+    <a href="https://www.worldwildlife.org/species/sea-turtle">WWF</a>
+    <a href="https://www.britannica.com/animal/turtle-reptile">Britannica</a>
+  </nav>
+  <div>
+    <img src="https://assets.codepen.io/5804361/Myrtle_Game.gif" alt="Gif of computer game with turtle moving around a grid."/>
+    <h1>Myrtle the Turtle</h1>
+  </div>
+</header>
+```
+{{% /notice %}}
 
 {{% notice style="warning" title="Test" icon="vial" %}}
 

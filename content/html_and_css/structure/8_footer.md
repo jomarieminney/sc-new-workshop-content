@@ -7,12 +7,23 @@ chapter: false
 The `footer` element is used to identify the footer of a page.
 It usually contains the copyright information or navigational elements.
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```html
 </main>
-+<footer>
+
   <p>&copy; She Codes Australia.</p>
-+</footer>
+
 ```
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```html
+</main>
+<footer>
+  <p>&copy; She Codes Australia.</p>
+</footer>
+```
+{{% /notice %}}
 
 {{% notice style="warning" title="Test" icon="vial" %}}
 
