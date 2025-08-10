@@ -90,246 +90,53 @@ function generateCertificate() {
         unit: "mm",
         format: "a4"
     });
+    const image = new Image();
+    image.src = "./JavaScript_Certificate.png";
     
-    // Create certificate
-    doc.setFillColor(139, 69, 19);
-    doc.rect(0, 0, 297, 210, 'F');
+    image.onload = function() {
+        doc.addImage(image, "png", 0, 0, 297, 210);
+        doc.setFontSize(22);
+        doc.text(firstName + ' ' + lastName, 150, 80, 'center');
+        doc.save("She Codes Australia Certificate");
+    };
     
-    doc.setFillColor(245, 245, 220);
-    doc.rect(10, 10, 277, 190, 'F');
-    
-    doc.setTextColor(139, 69, 19);
-    doc.setFontSize(28);
-    doc.setFontType('bold');
-    doc.text('Certificate of Completion', 148.5, 50, 'center');
-    
-    doc.setFontSize(18);
-    doc.setFontType('normal');
-    doc.text('This is to certify that', 148.5, 75, 'center');
-    
-    doc.setFontSize(24);
-    doc.setFontType('bold');
-    doc.text(`${firstName} ${lastName}`, 148.5, 100, 'center');
-    
-    doc.setFontSize(18);
-    doc.setFontType('normal');
-    doc.text('has successfully completed the', 148.5, 125, 'center');
-    
-    doc.setFontSize(22);
-    doc.setFontType('bold');
-    doc.text('JavaScript Tutorial', 148.5, 150, 'center');
-    
-    doc.setFontSize(14);
-    doc.setFontType('normal');
-    doc.text('She Codes Australia', 148.5, 175, 'center');
-    
-    doc.save(`${firstName}_${lastName}_JavaScript_Certificate.pdf`);
+    // Fallback if image doesn't load
+    image.onerror = function() {
+        doc.setFontSize(22);
+        doc.text(firstName + ' ' + lastName, 150, 80, 'center');
+        doc.text('JavaScript Certificate', 150, 100, 'center');
+        doc.save("She Codes Australia Certificate");
+    };
 }
 
-// Form submission handling
-(function() {
-    var form_to_submit = document.getElementById('_form_39_');
-    var allInputs = form_to_submit.querySelectorAll('input, select, textarea');
-    var tooltips = [];
-    var submitted = false;
+// Method 1: ActiveCampaign success callback (for form submission)
+window._form_callback = function(id) {
+    if (id === 39) {
+        generateCertificate();
+    }
+};
 
-    var getUrlParam = function(name) {
-        var regexS = "[\\?&]" + name + "=([^&#]*)";
-        var regex = new RegExp(regexS);
-        var tmpURL = window.location.href;
-        var results = regex.exec(tmpURL);
-        if (results == null) {
-            return "";
-        } else {
-            return decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-    };
-
-    var getCookie = function(name) {
-        var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
-        return match ? match[2] : null;
-    };
-
-    var setCookie = function(name, value, expiry_date) {
-        var expiryDate = expiry_date || null;
-        if (expiryDate) {
-            document.cookie = name + "=" + value + "; expires=" + expiryDate + "; path=/";
-        } else {
-            document.cookie = name + "=" + value + "; path=/";
-        }
-    };
-
-    var addEvent = function(element, event, func) {
-        if (element.addEventListener) {
-            element.addEventListener(event, func);
-        } else {
-            var oldFunc = element['on' + event];
-            element['on' + event] = function() {
-                oldFunc.apply(element, arguments);
-                return func.apply(element, arguments);
-            };
-        }
-    };
-
-    var _load_script = function(url, callback, isAsync) {
-        var head = document.head || document.getElementsByTagName('head')[0];
-        var script = document.createElement('script');
-        var loaded = false;
-        script.type = 'text/javascript';
-        script.charset = 'utf-8';
-        script.src = url;
-        if (isAsync === undefined) isAsync = true;
-        script.async = isAsync;
-        if (callback) {
-            script.onreadystatechange = script.onload = function() {
-                if (!loaded) {
-                    callback();
-                    loaded = true;
-                }
-            };
-        }
-        head.appendChild(script);
-    };
-
-    var validate_form = function(e) {
-        var err = form_to_submit.querySelector('._form_error');
-        var elems = form_to_submit.elements;
-        if (err) {
-            err.parentNode.removeChild(err);
-        }
-        for (var i = 0, len = elems.length; i < len; i++) {
-            var input = elems[i];
-            var tooltip = null;
-            if (input.getAttribute('name') == 'email') {
-                if (input.value == "") {
-                    tooltip = create_tooltip(input, "This field is required.");
-                    return false;
-                }
-                if (!/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i.test(input.value)) {
-                    tooltip = create_tooltip(input, "Enter a valid email address.");
-                    return false;
-                }
-            }
-        }
-        return true;
-    };
-
-    var create_tooltip = function(elem, text) {
-        var tooltip = document.createElement('div');
-        var inner = document.createElement('div');
-        var arrow = document.createElement('div');
-        if (elem.type != 'radio' && elem.type != 'checkbox') {
-            tooltip.className = '_error';
-            arrow.className = '_error-arrow';
-            inner.className = '_error-inner';
-            inner.innerHTML = text;
-            tooltip.appendChild(arrow);
-            tooltip.appendChild(inner);
-            elem.parentNode.appendChild(tooltip);
-        } else {
-            tooltip.className = '_error-inner _no_arrow';
-            tooltip.innerHTML = text;
-            elem.parentNode.insertBefore(tooltip, elem);
-        }
-        return tooltip;
-    };
-
-    var resize_tooltip = function(tooltip) {
-        var rect = tooltip.elem.getBoundingClientRect();
-        var doc = document.documentElement;
-        var scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
-        if (scrollPosition < 40) {
-            tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
-        } else {
-            tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
-        }
-    };
-
-    var resize_tooltips = function() {
-        if (_removed) return;
-        for (var i = 0; i < tooltips.length; i++) {
-            resize_tooltip(tooltips[i]);
-        }
-    };
-
-    var _form_serialize = function(form) {
-        if (!form || form.nodeName !== "FORM") {
-            return;
-        }
-        var i, j, q = [];
-        for (i = 0; i < form.elements.length; i++) {
-            if (form.elements[i].name === "") {
-                continue;
-            }
-            switch (form.elements[i].nodeName) {
-                case "INPUT":
-                    switch (form.elements[i].type) {
-                        case "text":
-                        case "hidden":
-                        case "password":
-                        case "button":
-                        case "reset":
-                        case "submit":
-                            q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                            break;
-                        case "checkbox":
-                        case "radio":
-                            if (form.elements[i].checked) {
-                                q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                            }
-                            break;
-                        case "file":
-                            break;
-                    }
-                    break;
-                case "TEXTAREA":
-                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                    break;
-                case "SELECT":
-                    switch (form.elements[i].type) {
-                        case "select-one":
-                            q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                            break;
-                        case "select-multiple":
-                            for (j = 0; j < form.elements[i].options.length; j++) {
-                                if (form.elements[i].options[j].selected) {
-                                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].options[j].value));
-                                }
-                            }
-                            break;
-                    }
-                    break;
-                case "BUTTON":
-                    switch (form.elements[i].type) {
-                        case "reset":
-                        case "submit":
-                        case "button":
-                            q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                            break;
-                    }
-                    break;
-            }
-        }
-        return q.join("&");
-    };
-
-    var form_submit = function(e) {
-        e.preventDefault();
-        if (validate_form()) {
-            // Generate and download the certificate first
-            generateCertificate();
-            
-            // Then submit to ActiveCampaign
-            var submitButton = e.target.querySelector('#_form_39_submit');
-            submitButton.disabled = true;
-            submitButton.classList.add('processing');
-            
-            var serialized = _form_serialize(document.getElementById('_form_39_'));
-            _load_script('https://shecodes.activehosted.com/proc.php?' + serialized + '&jsonp=true');
-        }
-        return false;
-    };
-
-    addEvent(form_to_submit, 'submit', form_submit);
-})();
+// Method 2: Direct button click (fallback/immediate generation)
+document.addEventListener('DOMContentLoaded', function() {
+    // URL parameter pre-filling for email links
+    const urlParams = new URLSearchParams(window.location.search);
+    const firstName = urlParams.get('firstname');
+    const lastName = urlParams.get('lastname');
+    
+    if (firstName) {
+        document.getElementById('firstname').value = decodeURIComponent(firstName);
+    }
+    if (lastName) {
+        document.getElementById('lastname').value = decodeURIComponent(lastName);
+    }
+    
+    // Add click listener for manual PDF generation when form is visible
+    const submitBtn = document.getElementById('_form_39_submit');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function(e) {
+            // Generate PDF immediately (don't wait for form submission)
+            setTimeout(generateCertificate, 100);
+        });
+    }
+});
 </script>
