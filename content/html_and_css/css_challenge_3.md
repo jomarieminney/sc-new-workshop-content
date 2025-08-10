@@ -8,7 +8,7 @@ Now that you've learned the fundamentals for coding with HTML and CSS, let's get
 
 We've created most of the following page:
 
-![](../../images/css_challenge_3.png)
+![](../images/css_challenge_3.png)
 
 The only problem is, our CSS got a bit jumbled...
 
