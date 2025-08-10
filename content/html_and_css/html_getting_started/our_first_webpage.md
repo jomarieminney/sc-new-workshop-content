@@ -10,7 +10,7 @@ Now that we are all set up, let's write some code.
 
 Add the following to the HTML editor:
 
-```html
+```html {title="html"}
 <h1>Myrtle the Turtle</h1>
 ```
 

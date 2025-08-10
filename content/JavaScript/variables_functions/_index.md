@@ -11,7 +11,7 @@ To start off, we're going to grab some of the elements on the page, and save the
 {{% notice info %}}
 
 An 'element' as a specific part of the page. For example, the heading text and start button are both elements. Elements are defined using HTML, feel free to unfold the HTML section on CodePen and have a peak! The screenshot below shows where to click and drag to unfold the HTML editor:
-![](images/expand.png)
+![](./images/expand.png)
 
 {{% /notice %}}
 
@@ -20,7 +20,7 @@ An 'element' as a specific part of the page. For example, the heading text and s
 
 The first variable that we'll create will be called `timeUp`. We'll use this to stop the game at the end of the allotted time. To do create this variable, simply copy and paste the following code into the JavaScript window in your CodePen!
 
-```js
+```js {title="js"}
 let timeUp = false;
 ```
 
@@ -38,14 +38,13 @@ JavaScript has lots of tricks built into it to make our lives easier, we call th
 
 In particular we'll be using the `querySelector` and `querySelectorAll` functions. When we created the template code, we added some specific information to different elements on the page. These functions will allow us to use that information to access those elements in our JavaScript.
 
-
 If you already know some basic HTML & CSS, you'll already be familiar with CSS Selectors such as Classes and ID's, which is what the [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) and [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) functions use. If you're new to this, don't stress about it too much - we'll be telling you which selectors to use, and you can find out more about them by taking [our HTML/CSS tutorial](https://tutorials.shecodes.com.au/html_and_css_intro/) when you've got more time! For now, all you need to know is that we are going to using 'hole' and 'score' to define our variables.
 
 <br/>
 
 The following code creates two new variables, called `holes` and `scoreBoard`. Copy and paste this code below the `timeUp` variable that we created earlier:
 
-```js
+```js {title="js"}
 let holes = document.querySelectorAll('.hole');
 let scoreBoard = document.querySelector('.score');
 ```
@@ -54,7 +53,7 @@ let scoreBoard = document.querySelector('.score');
 
 This is what you should have in CodePen so far:
 
-```js
+```js {title="js"}
 let timeUp = false;
 let holes = document.querySelectorAll('.hole');
 let scoreBoard = document.querySelector('.score');
@@ -69,7 +68,7 @@ We're going to create a function called `startGame` and this is going to run eve
 How does this function get triggered?
 In our HTML code there is a start button with an `onclick` event:
 
-```HTML
+```HTML {title="html"}
 <button onclick="startGame()">Start</button>
 ```
 
@@ -79,7 +78,7 @@ When we created the HTML code in the template, we actually already instructed th
 
 Add the following to your JavaScript code in CodePen to create your function:
 
-```js
+```js {title="js"}
 function startGame() {
     console.log('Game has started');
 }
@@ -91,7 +90,7 @@ Let's test it! In the bottom left corner of your Codepen, click on **Console** t
 
 After a certain about of time has passed, we then want to end the game, so let's write a function for that too:
 
-```js
+```js {title="js"}
 function endGame() {
     console.log('Game has finished');
 }
@@ -99,13 +98,27 @@ function endGame() {
 
 To start the game we press the **Start** button. To then end the game, we will trigger our new `endGame` function from the `startGame` function. We'll use [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) to do this. This will trigger `endGame` after a delay of 10000ms.
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```js
+
 function startGame() {
     console.log('Game has started');
 
-+    setTimeout(endGame, 10000);
 }
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```js
+
+function startGame() {
+    console.log('Game has started');
+
+    setTimeout(endGame, 10000);
+}
+```
+{{% /notice %}}
 
 {{% notice tip %}}
 
@@ -127,7 +140,7 @@ If you'd like to learn more about variables or functions (what we just used), yo
 
 This is what you should have in CodePen so far:
 
-```js
+```js {title="js"}
 let timeUp = false;
 let holes = document.querySelectorAll('.hole');
 let scoreBoard = document.querySelector('.score');

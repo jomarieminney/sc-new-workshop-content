@@ -6,7 +6,7 @@ pre: "<i class='fab fa-js-square'></i>&nbsp; "
 
 Welcome to our She Codes Australia One Day Workshop. We've put together a fun little tutorial to give you a coding taster for a mini game. 
 
-The tutorial teaches you the JavScript component of our cupcake smashing game. You can take your time and read through concepts to understand more about JavaScript, or you can fly through the content and have fun smashing cupcakes! 
+The tutorial teaches you the JavaScript component of our cupcake smashing game. You can take your time and read through concepts to understand more about JavaScript, or you can fly through the content and have fun smashing cupcakes! 
 
 At She Codes we firmly believe that coding is **ALWAYS** better with cupcakes!
 

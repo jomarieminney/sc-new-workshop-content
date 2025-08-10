@@ -1,7 +1,7 @@
 ---
 title: "Smash It"
 weight: 7
-chapter: true
+chapter: false
 ---
 
 ## Smashing the cupcakes
@@ -12,10 +12,9 @@ To do this, we're going to create another function called `smash` to run wheneve
 
 Add the following function to the bottom of your code:
 
-```js
+```js {title="js"}
 function smash(cupcake) {
     console.log('smashed!');
-
     cupcake.parentNode.classList.remove('up');
 }
 ```
@@ -33,7 +32,7 @@ You can read more about nodes and parent nodes [here](https://developer.mozilla.
 
 This is what you should have in CodePen so far:
 
-```js
+```js {title="js"}
 let timeUp = false;
 let holes = document.querySelectorAll('.hole');
 let scoreBoard = document.querySelector('.score');
@@ -41,7 +40,6 @@ let scoreBoard = document.querySelector('.score');
 function startGame() {
     timeUp = false;
     popUp();
-
     setTimeout(endGame, 10000);
 }
 
@@ -53,12 +51,9 @@ function popUp() {
     console.log('Here I am!');
     let hole = randomHole(holes);
     let time = 500;
-
     hole.classList.add('up');
-
     setTimeout(function () {
         hole.classList.remove('up');
-
         if (timeUp == false) {
             popUp();
         }
@@ -68,16 +63,19 @@ function popUp() {
 function randomHole(holes) {
     let holeNumber = Math.floor(Math.random() * holes.length);
     let hole = holes[holeNumber];
-
     return hole;
 }
 
 function smash(cupcake) {
     console.log('smashed!');
-
     cupcake.parentNode.classList.remove('up');
 }
 ```
 
 ### Console Celebrations:
+
+{{% notice style="warning" title="Test" %}}
+
 The `console.log('smashed!')` line is a fun way to celebrate your cupcake-smashing skills. Check out your console (remember, in CodePen's bottom left) to see the feedback each time you smash a cupcake.
+
+{{% /notice %}}

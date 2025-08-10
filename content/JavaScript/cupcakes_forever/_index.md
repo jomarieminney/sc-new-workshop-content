@@ -1,14 +1,14 @@
 ---
 title: "Cupcakes are Forever"
 weight: 3
-chapter: true
+chapter: false
 ---
 
-# Popping Up Cupcakes
+## Popping Up Cupcakes
 
 Next we want to create a function to pop our cupcakes up out of the holes. There's CSS styling already set up for most of this so the cupcakes will appear all shiny, so we just need to add a class to one of our holes to make the cupcakes appear. This will take the first hole from the list we saved earlier, and add the class of `up` to it (which will then do some CSS magic). Add the following to the bottom of your JavaScript code:
 
-```js
+```js {title="js"}
 function popUp() {
     let hole = holes[0];
 
@@ -24,14 +24,24 @@ Note the different colours and +/- indicators in the code example below. This is
 
 {{% /notice %}}
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```js
 function startGame() {
--	console.log('Game has started');
-+	popUp();
-
+	console.log('Game has started');
 	setTimeout(endGame, 10000);
 }
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```js
+function startGame() {
+	popUp();
+	setTimeout(endGame, 10000);
+}
+```
+{{% /notice %}}
 
 Now try clicking the **Start** button and see what happens! A cupcake should have appeared form the first hole.
 
@@ -39,7 +49,7 @@ Now try clicking the **Start** button and see what happens! A cupcake should hav
 
 This is what you should have in CodePen so far:
 
-```js
+```js {title="js"}
 let timeUp = false;
 let holes = document.querySelectorAll('.hole');
 let scoreBoard = document.querySelector('.score');

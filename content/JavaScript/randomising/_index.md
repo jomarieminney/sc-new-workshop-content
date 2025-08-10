@@ -1,7 +1,7 @@
 ---
 title: "That's So Random!"
 weight: 9
-chapter: true
+chapter: false
 ---
 
 ## Let's mix it up - randomising the cupcakes!
@@ -10,7 +10,7 @@ Great job on getting your game running so far! Now it's time to add a twist ... 
 
 At the moment our `popUp` function looks like this:
 
-```js
+```js {title="js"}
 function popUp() {
     console.log('Here I am!');
     let hole = holes[0];
@@ -28,11 +28,12 @@ function popUp() {
 }
 ```
 
+{{% notice info %}}
 The part of this code that determines where the cupcake pops up is this line:
-
 ```js
 let hole = holes[0];
 ```
+{{% /notice %}}
 
 Right now, your code always picks the first hole.
 
@@ -46,8 +47,9 @@ In that step we're telling JavaScript "Hey, find me all the cupcake holes on the
 
 Yes you are seeing this correctly, in JavaScript, **arrays start counting at 0**. So, the`[0]`in`holes[0]` is what tells JavaScript to just get the first cupcake hole on the page.
 
-
-> It might seem a little strange at first, I know usually we start counting at 1. But think of it like this: if the cupcake holes were secret hideouts, the code '0' is the secret agent name for the first one!
+{{% notice info %}}
+It might seem a little strange at first, I know usually we start counting at 1. But think of it like this: if the cupcake holes were secret hideouts, the code '0' is the secret agent name for the first one!
+{{% /notice %}}
 
 > To recap, our `holes` variable type is called an '[array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)' and looks something like this: `holes = [hole 0, hole 1, hole 2, ... hole 8]`. We can reference any item in our array using the index position (what position it is in in the list). And remember, in arrays the first position is always '0' (not 1). So if we reference `holes[1]` it will actually access the second cupcake hole, not the first!
 
@@ -56,7 +58,7 @@ the [`math.random`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 At the bottom of your existing code, add this:
 
-```js
+```js {title="js"}
 function randomHole(holes) {
     let holeNumber = Math.floor(Math.random() * holes.length);
     let hole = holes[holeNumber];
@@ -67,10 +69,10 @@ function randomHole(holes) {
 
 We then need to update our `popUp` function to run our new `randomHole` function each time the cupcake pops up, instead of always referring to the first hole:
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```js
 function popUp() {
--	let hole = holes[0];
-+   let hole = randomHole(holes);
+	let hole = holes[0];
 	let time = 500;
 
 	hole.classList.add('up');
@@ -85,13 +87,34 @@ function popUp() {
 }
 ```
 
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```js
+function popUp() {
+    let hole = randomHole(holes);
+	let time = 500;
+
+	hole.classList.add('up');
+
+	setTimeout(function() {
+		hole.classList.remove('up');
+
+		if(timeUp == false) {
+				popUp();
+		}
+	}, time)
+}
+```
+{{% /notice %}}
+
 Now when you hit **Start**, you should see your cupcakes popping up everywhere!
 
 ## Check your code!
 
 This is what you should have in CodePen so far:
 
-```js
+```js {title="js"}
 let timeUp = false;
 let holes = document.querySelectorAll('.hole');
 let scoreBoard = document.querySelector('.score');
@@ -99,7 +122,6 @@ let scoreBoard = document.querySelector('.score');
 function startGame() {
     timeUp = false;
     popUp();
-
     setTimeout(endGame, 10000);
 }
 
@@ -138,9 +160,16 @@ function smash(cupcake) {
     scoreBoard.textContent = score;
 }
 ```
+{{% notice info %}}
 
-> **Learning in Action:** You're using arrays and random number generation - key concepts in JavaScript!
+**Learning in Action:** You're using arrays and random number generation - key concepts in JavaScript!
+
+{{% /notice %}}
 
 ### Extra challenge
 
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
+
 Once you're comfortable, experiment with different timings or even try changing the random number generation logic to see how it affects the game's behaviour. What happens if you use `Math.round()` instead of `Math.floor()`?
+
+{{% /notice %}}
