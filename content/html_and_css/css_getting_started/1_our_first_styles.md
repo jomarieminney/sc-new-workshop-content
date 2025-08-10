@@ -21,7 +21,7 @@ We'll start by changing the colour of page.
 
 Add the following css:
 
-```css
+```css {title="css"}
 /* Your CSS here */
 
 body {

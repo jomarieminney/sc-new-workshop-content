@@ -22,9 +22,10 @@ Copy the code **between the `<style>` tags**.
 
 Paste this code at the **top of your css file**.
 
-```diff
+```css {title="css"}
+
 /* Your fonts here */
-+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 /* */
 ```
 
@@ -32,20 +33,20 @@ Then head back to Google Fonts and copy the `font-family` line of code.
 
 Let's style our headings with your selected font:
 
-```diff
+```css {title="css"}
 /* Your CSS here */
 
-+h1 {
-+	font-family: 'Pacifico', cursive;
-+}
+h1 {
+	font-family: 'Pacifico', cursive;
+}
 
-+h2 {
-+	font-family: 'Pacifico', cursive;
-+}
+h2 {
+	font-family: 'Pacifico', cursive;
+}
 
-+h3 {
-+	font-family: 'Pacifico', cursive;
-+}
+h3 {
+	font-family: 'Pacifico', cursive;
+}
 ```
 
 {{% notice style="info" title="Challenge!" icon="lightbulb" %}}
@@ -60,14 +61,28 @@ Let's try changing the size of our text too.
 
 Add the following to your CSS:
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```css
 /* Your CSS here */
 
 h1 {
 	font-family: 'Pacifico', cursive;
-+    font-size: 50px;
+
 }
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```css
+/* Your CSS here */
+
+h1 {
+	font-family: 'Pacifico', cursive;
+    font-size: 50px;
+}
+```
+{{% /notice %}}
 
 {{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
@@ -81,12 +96,12 @@ We can change the color of our fonts using the `color` attribute.
 
 Add the following to your CSS:
 
-```diff
+```css {title="css"}
 /* Your CSS here */
 
-+a {
-+	color: #ffffff;
-+}
+a {
+	color: #ffffff;
+}
 ```
 
 {{% notice style="warning" title="Test" icon="vial" %}}

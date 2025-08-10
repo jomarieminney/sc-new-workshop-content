@@ -8,14 +8,28 @@ We can also add borders to elements.
 
 Try adding the following to the first image:
 
-```diff
+{{% notice style="warning" title="Before - Replace this code" %}}
+```css
 /* Your CSS here */
 
 header img {
 	height: 100px;
-+	border: 1px solid #000000;
+
 }
 ```
+
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```css
+/* Your CSS here */
+
+header img {
+	height: 100px;
+	border: 1px solid #000000;
+}
+```
+{{% /notice %}}
 
 {{% notice style="warning" title="Test" icon="vial" %}}
 
