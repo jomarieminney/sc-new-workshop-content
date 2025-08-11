@@ -52,21 +52,18 @@ Get your Certificate!
       </div>
       <div class="_form_element _x44330160 _inline-style " >
         <label for="email" class="_form-label">
-          Email<span class="field-required">
-          *
-        </span>
-      </label>
-      <div class="_field-wrapper">
-        <input type="text" id="email" name="email" placeholder="Type your email" required/>
+          Email*
+        </label>
+        <div class="_field-wrapper">
+          <input type="text" id="email" name="email" placeholder="Type your email" required/>
+        </div>
+      </div>
+      <div class="_button-wrapper _inline-style">
+        <input id="_form_31_submit" class="_submit" type="submit" value="Download" />
+      </div>
+      <div class="_clear-element">
       </div>
     </div>
-    <div class="_button-wrapper _inline-style">
-      <input id="_form_31_submit" class="_submit" type="submit"     value="Download" >
-      </input>
-    </div>
-    <div class="_clear-element">
-    </div>
-  </div>
   <div class="_form-thank-you" style="display:none;">
   </div>
 </form>
@@ -134,15 +131,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('_form_31_submit');
     if (submitBtn) {
         submitBtn.addEventListener('click', function(e) {
-            // Prevent form submission to avoid navigation issues
-            e.preventDefault();
-            // Generate PDF immediately
+            // Generate PDF immediately for instant feedback
             generateCertificate();
+            
             // Show success message
-            document.querySelector('._form-content').style.display = 'none';
-            var thankYouDiv = document.querySelector('._form-thank-you');
-            thankYouDiv.innerHTML = '<h3>Your certificate is downloading!</h3><p>Your personalised Django certificate should appear in your downloads folder.</p>';
-            thankYouDiv.style.display = 'block';
+            setTimeout(function() {
+                document.querySelector('._form-content').style.display = 'none';
+                var thankYouDiv = document.querySelector('._form-thank-you');
+                thankYouDiv.innerHTML = '<h3>Your certificate is downloading!</h3><p>Your personalised Django certificate should appear in your downloads folder.</p>';
+                thankYouDiv.style.display = 'block';
+            }, 500);
+            
+            // Allow form to also submit to ActiveCampaign (don't prevent default)
         });
     }
 });
