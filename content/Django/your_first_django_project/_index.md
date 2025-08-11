@@ -1,7 +1,7 @@
 ---
 title: "Your First Django Project"
 weight: 3
-chapter: true
+chapter: false
 ---
 
 The first step to create our Bakery Finder app is to start a new Django project. Django has some magic meaning that when we run some scripts, Django will create the skeleton of a Django project for us! The skeleton is a bunch of files that we will explain as we go.
@@ -83,7 +83,7 @@ We can ignore the other files for now as we won't change them - the only thing t
 
 Before we get too carried away, lets check your Django project works. You need to be in the directory that contains the `manage.py` file (the `bakery_site` directory). In the console, we can start the web server by running `python manage.py runserver`:
 
-```
+```sh {title="terminal"}
 (myvenv) bakery_site% python manage.py runserver
 ```
 
@@ -91,14 +91,14 @@ Before we get too carried away, lets check your Django project works. You need t
 
 If you are on Windows and this fails with `UnicodeDecodeError`, use this command instead:
 
-```
+```sh {title="terminal"}
 (myvenv) bakery_site% python manage.py runserver 0:8000
 ```
 
 
 Now you need to check that your website is running. Open your browser ( eg Firefox, Chrome, Safari etc) and enter this address:
 
-```
+``` {title="browser"}
 http://127.0.0.1:8000/
 ```
 
@@ -108,10 +108,13 @@ Congratulations! You've just created your first website and run it using a web s
 
 ![Install worked!](images/install_worked.png)
 
+{{% notice note %}}
+
 Note that a command window can only run one thing at a time, and the command window you opened earlier is running the web server. As long as the web server is running and waiting for additional incoming requests, the terminal will accept new text but will not execute new commands.
 
-To type additional commands while the web server is running, open a new terminal window and activate your virtualenv. To stop the web server, switch back to the window in which it's running and press CTRL+C (Control and C keys together). Psst, if that doesn't work on Windows, you might have to press Ctrl+Break.
+To type additional commands while the web server is running, open a **new terminal window** and activate your **virtualenv**. To stop the web server, switch back to the window in which it's running and press **CTRL+C** (Control and C keys together). Psst, if that doesn't work on Windows, you might have to press Ctrl+Break.
 
+{{% /notice %}}
 
 
 

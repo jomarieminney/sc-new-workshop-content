@@ -74,7 +74,7 @@ You might be wondering why we are installing this special code editor software, 
 
 The first reason is that code needs to be plain text, and the problem with programs like Word and Textedit is that they don't actually produce plain text, they produce rich text (with fonts and formatting), using custom formats like RTF (Rich Text Format).
 
-The second reason is that code editors are specialized for editing code, so they can provide helpful features like highlighting code with color according to its meaning, or automatically closing quotes for you.
+The second reason is that code editors are specialised for editing code, so they can provide helpful features like highlighting code with color according to its meaning, or automatically closing quotes for you.
 
 We'll see all this in action later. Soon, you'll come to think of your trusty old code editor as one of your favorite tools. 
 
@@ -91,7 +91,7 @@ All you need to do is find a directory in which you want to create the virtualen
 
 For this tutorial we will be using a new directory bakery_site from your home directory:
 
-```sh
+```sh {title="terminal"}
 mkdir bakery_site
 cd bakery_site
 ```
@@ -141,7 +141,7 @@ Before we do that, we should make sure we have the latest version of pip, the so
 
 1. Ensure you have the latest **pip**:
 
-```sh
+```sh {title="terminal"}
 pip install --upgrade pip
 ```
 
@@ -154,7 +154,7 @@ Hit save, and head back to your terminal.
 
 3. Install dependencies:
 
-```sh
+```sh {title="terminal"}
 pip install -r requirements.txt
 ```
 This is telling your machine to go and look at the requirements file we just created and install the things created within. If you're having any issues with this step, grab a mentor.
