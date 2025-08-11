@@ -1,16 +1,16 @@
 ---
 title: "Fake it til you Bake it"
 weight: 5
-chapter: true
+chapter: false
 ---
 
-## Setting Up
+### Setting Up
 
 We've got a website up and working - woohoo! We've got a few settings to play with, and then we can get some content loaded in.
 
 After creating an application, we need to tell Django that it should use it. We do that in the file `bakery_project/settings.py`, open it in your code editor. We need to find `INSTALLED_APPS` and add a line containing your app just above `]`. So the final product should look like this:
 
-```python
+```python {title="django"}
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -27,7 +27,7 @@ INSTALLED_APPS = [
 
 We'll also need to add a path for static files. Go down to the *end* of the file, and just underneath the `STATIC_URL` entry, add a new one called `STATIC_ROOT`:
 
-```python
+```python {title="django"}
  STATICFILES_DIRS = [
     BASE_DIR / "bakery_project" / "static",
  ]
@@ -56,15 +56,18 @@ STATIC_URL = "static/"
 
 - **`MEDIA_ROOT`**: This tells Django where uploaded media files should be stored on your computer or server.
 
-## Django Style
+### Django Style
 
+{{% notice info %}}
 What's a template, you may ask?
 
 A template is a file that we can re-use to present different information in a consistent format – for example, you could use a template to help you write a letter because although each letter might contain a different message and be addressed to a different person, they will share the same format.
 
 A Django template's format is described in a language called HTML! If you have not already we recommend doing She Codes HTML/CSS tutorial! 
 
-Before diving to create template, Let's make some changes in `bakery_project/settings.py`.
+{{% /notice %}}
+
+Before diving to create a template, let's make some changes in `bakery_project/settings.py`.
 
 ### Templates Directory
 
@@ -74,7 +77,9 @@ Let’s tell Django to look inside a `templates` folder located at `bakery_proje
 
 You don’t need to create the folder just yet, we’ll walk you through that later when we build your first template.
 
-Open `settings.py`, and find the `TEMPLATES` section. Update the `'DIRS'` entry like this:
+{{% notice style="info" title="Code Editor" %}}
+
+Open `settings.py` in your code editor, and find the `TEMPLATES` section. Update the `'DIRS'` entry like this:
 
 ```diff
 
@@ -97,14 +102,58 @@ TEMPLATES = [
 ]
 
 ```
+{{% /notice %}}
 
+Apologies, you may not be familiar with `- remove this line of code` and `+ add this line of code`, so here comes the trusty before and after box:
+
+{{% notice style="warning" title="Before - Replace this code" %}}
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+{{% /notice %}}
+
+{{% notice style="tip" title="After - Updated code" %}}
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / "bakery_project" / "templates"],
+
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+{{% /notice %}}
 
 This tells Django to also search in this folder when rendering HTML pages.
 
 
 {{% notice tip %}} Using a shared templates directory keeps things tidy, especially when building base layouts used across multiple apps. {{% /notice %}}
 
-## Your first template!
+### Your first template!
 
 Creating a template means creating a template file. Everything is a file, right? You have probably noticed this already.
 
@@ -112,7 +161,7 @@ Let’s create `templates` folder located at `bakery_project`. In our `templates
 
 Let's add a heading and some text! 
 
-```html
+```html {title="html"}
 <h1>🧁 Bakery Finder</h1>
 
 <div>
@@ -120,36 +169,49 @@ Let's add a heading and some text!
 </div>
 
 ```
+{{% notice style="warning" %}}
+
 Don't forget to save! 
+
+{{% /notice %}}
 
 So how does your website look now? Visit it to find out: http://127.0.0.1:8000/ 
 
-Huh, interesting, its still showing our Hello World! Remember earlier we wrote this in `views.py`?
+Huh, interesting, its still showing our Hello World! 
 
-```python
+{{% notice note %}}
+
+Remember earlier we wrote this in `views.py`?
+
+```python {title="django"}
 from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("Hello, world. Welcome to our bakery.")
 
 ```
+{{% /notice %}}
 
 This is saying whenever we load our app show us Hello World. This is no longer helpful, as we want to show our lovely bakery app. Lets change that line starting with return to the below:
 
-```python
+```python {title="django"}
 
 return render(request, "index.html")
 
 ```
 Now we are saying go find us `index.html` and show us that page. 
 
+{{% notice style="warning" %}}
+
 Save your code and refresh your website again and see how it looks.
 
-## Let’s Add a Bit More Structure and Experiment with HTML Tags
+{{% /notice %}}
 
-We've written you some starter code to get you going, copy and paste the below into your index.html file, overriding what you added in earlier.
+### Let’s Add a Bit More Structure and Experiment with HTML Tags
 
-```html
+We've written you some starter code to get you going, copy and paste the below into your `index.html` file, overriding what you added in earlier.
+
+```html {title="html"}
 <!DOCTYPE html>
 <html>
   <head>

@@ -48,13 +48,13 @@ Django is written in Python. We need Python to do anything in Django. Let's star
 {{% tab title="_**Linux**_" %}}
 Check if Python is installed:
 
-```sh
+```sh {title="terminal"}
 python3 --version
 ```
 
 If not, install it based on your Linux distribution. What's a Linux distribution? Distributions are packaged collections of software built on top of the Linux kernel, offering a complete operating system experience. We've pulled out a couple to get you started, if yours isn't there - Google is your friend, or ask a mentor for help.
 
-```sh
+```sh {title="terminal"}
 sudo apt install python3   # Debian/Ubuntu
 sudo dnf install python3   # Fedora
 sudo zypper install python3  # openSUSE

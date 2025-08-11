@@ -1,17 +1,17 @@
 ---
 title: "She's a Model"
 weight: 6
-chapter: true
+chapter: false
 ---
 So we've got a page but its all hardcoded and manual. That's no fun, we want dynamic data. Let's start by getting ourselves a database to store that data in.
 
-## Set up a database
+### Set up a database
 
 There's a lot of different database software that can store data for your site. We'll use the default one, `sqlite3`.
 
 This is already set up in this part of your `mysite/settings.py` file:
 
-```python
+```python {title="django"}
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -21,6 +21,20 @@ DATABASES = {
 ```
 
 To create a database for our app, let's run the following in the console: `python manage.py migrate` (we need to be in the `bakery_site` directory that contains the `manage.py` file). If your server is still running, press Control + C to stop it to run the next command.
+
+{{< tabs groupid="a">}}
+{{% tab title="_**should work**_" %}}
+```sh {title="terminal"}
+python manage.py runserver
+```
+{{% /tab %}}
+{{% tab title="_**if it doesn't work**_" %}}
+```sh {title="terminal"}
+python3 manage.py runserver
+```
+{{% /tab %}}
+{{< /tabs >}}
+
 
 If that goes well, you should see something like this:
 
@@ -53,16 +67,20 @@ Running migrations:
 And we're done! Time to start the web server and see if our website is working! See if you remember it from earlier...
 
 
-## Django Models
+### Django Models
 
 What we want to create is something that will store all the details about local bakeries and their scrumptious offerings in our bakery_project app. But to be able to do that, we need to talk a little bit about a concept in programming called `objects`.
 
 
 ### Objects
 
-In programming, there’s a powerful concept called object-oriented programming. Instead of writing a long list of instructions, we can structure our code to model real-world things and how they interact — just like objects in real life.
+In programming, there’s a powerful concept called object-oriented programming (OOP). Instead of writing a long list of instructions, we can structure our code to model real-world things and how they interact — just like objects in real life.
+
+{{% notice info %}}
 
 So, what is an object? Think of it as a bundle of properties (descriptions) and actions (things it can do). 
+
+{{% /notice %}}
 
 We want to build something that helps people discover amazing local bakeries and their delicious treats.
 
@@ -99,18 +117,21 @@ price: How much the item costs.
 image: An optional image URL of the item.
 ```
 
+{{% notice info %}}
+
 What kind of things could be done with these models? It would be very useful to have a method that returns a human-readable description of each instance. In Django, this is typically done using the `__str__` method. By defining this method, you ensure that when a Bakery or Item object is converted to a string, it provides a clear and concise representation (usually the name).
+
+{{% /notice %}}
 
 Let's start modeling it in Django!
 
-
-## Building out our models
+### Building out our models
 
 Now that we understand what an object is, we can use that knowledge to create a Django model for our bakery and another for its items.
 
-In Django, a model is a special type of object that gets saved to a 'database'. A database is simply a structured collection of data — it’s where you’ll store information about users, bakeries, their baked goods, and more.
+In Django, a model is a special type of object that gets saved to a **'database'**. A database is simply a structured collection of data — it’s where you’ll store information about users, bakeries, their baked goods, and more.
 
-For this project, we’ll be using a SQLite database, which is Django’s default option. It’s lightweight and perfect for what we need right now.
+For this project, we’ll be using a **SQLite database**, which is Django’s default option. It’s lightweight and perfect for what we need right now.
 
 You can imagine a model like a spreadsheet:
 
@@ -118,17 +139,21 @@ The columns represent the fields or attributes (like name, price, or location),
 
 And each row is a single record — one bakery, one item, etc.
 
+{{% notice info %}}
+
 Each model in Django becomes a table in the database, and the cool part is: models can be connected to each other! So a bakery can have many bakery items, and each item can belong to a specific bakery.
 
-
+{{% /notice %}}
 
 ### Creating a Bakery model
 
 In the `bakeries/models.py` file we define all objects called `Models` – this is a place in which we will define our bakery data models.
 
+{{% notice style="info" title="Code Editor" %}}
+
 Let's open `bakeries/models.py` in the code editor, remove everything from it, and write code like this:
 
-```python
+```python {title="django"}
 
 from django.db import models
 
@@ -142,10 +167,11 @@ class Bakery(models.Model):
 
     def __str__(self):
         return self.name
-
-
 ```
-{{% notice info %}}  
+{{% /notice %}}
+
+
+{{% notice tip %}}  
 
 Double-check that you use two underscore characters (`_`) on each side of `str`. This convention is used frequently in Python and they have a fun name "dunder" (short for "double-underscore").
 
@@ -172,14 +198,18 @@ Methods often `return` something. There is an example of that in the `__str__` m
 
 Also notice `def __str__(self):` is indented. Because Python is sensitive to whitespace, we need to indent our methods inside the class. Otherwise, the methods won't belong to the class, and you can get some unexpected behavior.
 
+{{% notice info %}}
+
 If you are curious about the rest of built-in Django from what we've done so far, have a look at Django's [documentation](https://docs.djangoproject.com/en/5.1/ref/models/fields/#field-types).
+
+{{% /notice %}}
 
 ### Creating an Item model
 
 Now let's define our `Item` model, which represents the baked goods offered by each bakery. Just below your Bakery model (at the very bottom of your code) in `bakeries/models.py` file, add the following code:
 
-
-```python
+{{% notice style="info" title="Code Editor" %}}
+```python {title="django"}
 
 class Item(models.Model):
     bakery = models.ForeignKey(Bakery, on_delete=models.CASCADE)
@@ -191,6 +221,7 @@ class Item(models.Model):
        return self.name
 
 ```
+{{% /notice %}}
 
 When we write: class Item(models.Model) we’re defining a model called Item. This is how we tell Django: "Hey, I want to create something called an Item and store it in the database."
 
@@ -198,6 +229,8 @@ The bit in brackets - models.Model – means that Item is inheriting from Django
 “Make this a Django model with all the features needed to connect to the database.”
 
 Thanks to this, Django knows to create a database table for Item. Each time we create a new item (like a croissant or cupcake), Django will save it as a row in the Item table.
+
+{{% notice style="warning" title="Test" icon="vial" %}}
 
 So if you’ve already created a model for your Bakery as well, you now have two tables in your database:
 
@@ -207,7 +240,11 @@ One for `Item`
 
 Each model = one table. Each instance (object) = one row.
 
+{{% /notice %}}
+
 We just defined the properties of an `Item` such as: `bakery`, `name`, `price` and `image`. To do that we defined the type of each field (Is it text? A number? A relation to another object?). This is exactly the same way we made our `Bakery` model.
+
+{{% notice note %}}
 
 Let's find out what's new here.
 
@@ -216,21 +253,22 @@ Let's find out what's new here.
 
 We are using a `__str__` method again. In this scenario, when we call `__str__()` we will get a text (**string**) with an Item name.
 
+{{% /notice %}}
+
 If something is still not clear about models, feel free to ask one of the mentors! Spot the purple shirt? Hands up now! We know its a lot to take in but you should be super proud of yourself. Hopefully it looks slightly less magic for you now.
 
-
-## Create tables for models in your database
+### Create tables for models in your database
 
 The last step here is to add our new models to our database. First we have to make Django know that we have some changes in our models (we have just created it!). Go to your console window and type `python manage.py makemigrations bakeries`. It will look like this:
 
-```
+```sh {title="terminal"}
 (myvenv) bakery_site% python manage.py makemigrations bakeries
 Migrations for 'bakeries':
   bakeries/migrations/0001_initial.py
     + Create model Bakery
     + Create model Item
 ```
-{{% notice info %}}  
+{{% notice warning %}}  
 
 **Note:** Remember to save the files you edit. Otherwise, your computer will execute the previous version which might give you unexpected error messages.
 
@@ -238,7 +276,7 @@ Migrations for 'bakeries':
 
 Django prepared a migration file for us that we now have to apply to our database. Type `python manage.py migrate bakeries` and the output should be as follows:
 
-```
+```sh {title="terminal"}
 (myvenv) ~/bakery_site$ python manage.py migrate bakeries
 Operations to perform:
   Apply all migrations: bakeries
