@@ -225,8 +225,6 @@ while True:
            food.setposition(random.randint(-290, 290), random.randint(-290, 290))
            food.right(random.randint(0,360))
 
-
-delay = input("Press Enter to finish.")
 ```
 
 {{% notice style="tip" title="Time to celebrate" %}}

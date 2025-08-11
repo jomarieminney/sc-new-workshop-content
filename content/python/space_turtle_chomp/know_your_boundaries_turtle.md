@@ -136,8 +136,6 @@ while True:
     if player.ycor() > 290 or player.ycor() <-290:
         player.right(180)
 
-
-delay = input("Press Enter to finish.")
 ```
 
 {{% notice style="tip" title="Time to celebrate" %}}

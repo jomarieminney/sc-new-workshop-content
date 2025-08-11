@@ -113,8 +113,6 @@ while True:
     if isCollision(player, food):
         food.setposition(random.randint(-290, 290), random.randint(-290, 290))
 
-
-delay = input("Press Enter to finish.")
 ```
 
 {{% notice style="tip" title="Time to celebrate" %}}
