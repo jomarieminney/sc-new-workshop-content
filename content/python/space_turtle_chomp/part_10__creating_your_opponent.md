@@ -1,24 +1,14 @@
-+++
-title = "Creating your opponent"
-date = 2025-08-07T10:00:00+08:00
-weight = 100
-chapter = true
-pre = ""
-+++
+---
+title: "Creating your opponent"
+weight: 11
+chapter: false
+---
 
-### Part 10
+In general games are more fun if you get to compete against an opponent, for Space Turtle Chomp this is very easy to do as we have already written all the code we just need to create an opponent section and cut and paste then modify our existing code.
 
-# Creating your opponent
+>**Step 1.**  First we need to create a new turtle object as the opponent, move to the end of  \#Create player turtle section and add:
 
-In general games are more fun if you get to compete against an opponent,
- for Space Turtle Chomp this is very easy to do as we have already written
- all the code we just need to create an opponent section and cut and paste
- then modify our existing code.
-
-Step 1.  First we need to create a new turtle object as the opponent, move to
- the end of  \#Create player turtle section and add:
-
-```python
+```python {title="python"}
 # Create opponent turtle
 comp = turtle.Turtle()
 comp.color('red')
@@ -27,21 +17,19 @@ comp.penup()
 comp.setposition(random.randint(-290, 290), random.randint(-290, 290))
 ```
 
-Step 2.  Save your game as kbgame10 and run your module
+>**Step 2.**  Save your game as kbgame10 and run your module.
 
-You now have a red opponent space turtle now, but you'll notice it doesn't move. Let’s make it move around the
- screen and add the boundary checking so it doesn’t run away.
+You now have a red opponent space turtle now, but you'll notice it doesn't move. Let’s make it move around the screen and add the boundary checking so it doesn’t run away.
 
-Step 3. To move your opponent turtle add the following code to the while True
- loop under player.forward\(speed\)
+>**Step 3.** To move your opponent turtle add the following code to the while True loop under player.forward\(speed\)
 
-```
+```python {title="python"}
     comp.forward(12)
 ```
 
-Step 4. Next copy the following text and paste it directly underneath. Note, the below example is in the format for Mac, if you are on Windows yours will look slightly different:
+>**Step 4.** Next copy the following text and paste it directly underneath. Note, the below example is in the format for Mac, if you are on Windows yours will look slightly different:
 
-```python
+```python {title="python"}
     # Boundary Player Checking x coordinate
     if player.xcor() > 290 or player.xcor() < -290:
         player.right(180)
@@ -53,9 +41,9 @@ Step 4. Next copy the following text and paste it directly underneath. Note, the
         os.system("afplay bounce.mp3&")
 ```
 
-Step 5. Edit the pasted text to:
+>**Step 5.** Edit the pasted text to:
 
-```python
+```python {title="python"}
     # Boundary Comp Checking x coordinate
     if comp.xcor() > 290 or comp.xcor() < -290:
         comp.right(180)
@@ -68,34 +56,33 @@ Step 5. Edit the pasted text to:
 ```
 
 {{% notice note %}}
-you can make the comp.forward speed faster or slower by changing the number
- within the brackets
+
+You can make the comp.forward speed faster or slower by changing the number within the brackets.
+
 {{% /notice %}}
 
-Step 6.  Save and run your module
+>**Step 6.**  Save and run your module.
 
-Now your opponent turtle is moving around the screen and bouncing of the walls,
- next we want to give them a score
+Now your opponent turtle is moving around the screen and bouncing of the walls, next we want to give them a score.
 
-Step 7.  Within the \# Create variable score section add:
+>**Step 7.**  Within the \# Create variable score section add:
 
-```python
+```python {title="python"}
 comp_score = 0
 ```
 
-Step 8. Now you create your competition score just under your \# Create
- opponent turtle section by adding:
+>**Step 8.** Now you create your competition score just under your \# Create opponent turtle section by adding:
 
-```python
+```python {title="python"}
 # Create competition score
 mypen2 = turtle.Turtle()
 mypen2.color('red')
 mypen2.hideturtle()
 ```
 
-Step 9.  Now copy the player collision checking section and paste direct below. Note: this example code is the version for Windows, if you are on a mac yours will look slightly different:
+>**Step 9.** Now copy the player collision checking section and paste direct below. Note: this example code is the version for Windows, if you are on a mac yours will look slightly different:
 
-```python
+```python {title="python"}
     # Collision checking
     if isCollision(player, food):
         food.setposition(random.randint(-290, 290), random.randint(-290, 290))
@@ -109,9 +96,9 @@ Step 9.  Now copy the player collision checking section and paste direct below. 
         mypen.write(scorestring, False, align='left', font=('Arial', 14, 'normal'))
 ```
 
-Step 10.  Edit the pasted code, changing player to comp, score to comp_score, mypen to mypen2 and setting the position of the comp score. It should look something like the below:
+>**Step 10.**  Edit the pasted code, changing player to comp, score to comp_score, mypen to mypen2 and setting the position of the comp score. It should look something like the below:
 
-```python
+```python {title="python"}
     # Comp Collision checking
     if isCollision(comp, food):
         food.setposition(random.randint(-290, 290), random.randint(-290, 290))
@@ -127,10 +114,25 @@ Step 10.  Edit the pasted code, changing player to comp, score to comp_score, my
         mypen2.write(scorestring, False, align='left', font=('Arial', 14, 'normal'))
 ```
 
+>**Step 11.** Save and run your module.
 
+Your code should look like this: 
 
-Step 11. Save and run your module
+{{< tabs groupid="a">}}
+{{% tab title="_**Windows**_" %}}
 
-Your code should look like this: Mac/Linux [kbgame10.py](/python_game/src/kbgame10.py), Windows [kbgame10.py](/python_game/src/kbgame10_win.py)
+Windows [kbgame10.py](/python/space_turtle_chomp/src/kbgame10_win.py)
+
+{{% /tab %}}
+{{% tab title="_**MacOS**_" %}}
+
+Mac [kbgame10.py](/python/space_turtle_chomp/src/kbgame10.py)
+
+{{% /tab %}}
+{{< /tabs >}}
+
+{{% notice style="tip" title="Time to celebrate" %}}
 
 **Congratulations Module 10 Completed**
+
+{{% /notice %}}
