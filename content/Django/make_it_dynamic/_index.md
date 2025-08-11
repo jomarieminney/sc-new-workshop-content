@@ -1,12 +1,12 @@
 ---
 title: "Make It Dynamic"
 weight: 8
-chapter: true
+chapter: false
 ---
 
 This is so exciting, we've got data from our Django admin but we need to display it on our page. Let's go back to our views.py one more time and update it to look like the below:
 
-```python
+```python {title="django"}
 from django.shortcuts import render
 
 from .models import Bakery
@@ -21,9 +21,7 @@ def index(request):
 
 This is telling our views to go look at our models, pull all the objects we created (remember the objects we talked about in the She's a Model section?) and show us that content, dynamically. Pretty snazzy.
 
-
-
-## Adding Django Data – Make It Dynamic!
+### Adding Django Data – Make It Dynamic!
 
 Right now, the data on your page is hardcoded. But Django is all about **dynamic content** meaning you can pull real data from your database and render it with your template.
 
@@ -32,7 +30,7 @@ This tells Django to prepare for using static files — like CSS stylesheets, im
 
 Notice in the snippet below we are removing the section in main from `<article>` down to `</article>` and replacing it with code that starts with {% for bakery in bakeries %} and ends with {% endfor %}. Watch carefully for the + and - lines in this one - it's easy to get caught out.
 
-```diff
+```diff {title="html"}
 
 + {% load static %}
 
@@ -97,9 +95,53 @@ Notice in the snippet below we are removing the section in main from `<article>`
 
 ```
 
+Oh, if you prefer the trusty **'after'** code box, to have clean code to copy and paste without + and - symbols:
 
+{{% notice style="tip" title="After - Updated code" %}}
+```html
 
-##  What’s Going On Here?
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bakery Finder</title>
+  </head>
+  <body>
+    <header>
+      <h1>🧁 Bakery Finder</h1>
+    </header>
+
+    <main>
+      <p>Need to find a bakery in a hurry? Here's a list of bakeries in your local area:</p>
+
+     {% for bakery in bakeries %}
+       <article>
+         <h2>{{ bakery.name }}</h2>
+         <p class="description">{{ bakery.cuisine }}</p>
+         <p>Located at: {{ bakery.address|linebreaksbr }}</p>
+         <p>Rating ⭐: {{ bakery.rating }}</p>
+         <ul>
+           {% for item in bakery.item_set.all %}
+             <li>{{ item.name }} - ${{ item.price }}</li>
+           {% endfor %}
+         </ul>
+       </article>
+     {% empty %}
+       <p>No bakeries found. Add some via the admin panel!</p>
+     {% endfor %}
+    </main>
+
+    <footer>
+      <p>© 2025 Bakery Finder</p>
+    </footer>
+  </body>
+</html>
+```
+{{% /notice %}}
+
+###  What’s Going On Here?
 
 Let's break down the Django template tags and expressions used in your dynamic page.
 
@@ -128,7 +170,7 @@ Let's break down the Django template tags and expressions used in your dynamic p
   → This wraps up the loop.
 
 ---
-Let's go ahead and check your server http://127.0.0.1:8000/
+Let's go ahead and check your server `http://127.0.0.1:8000/`
 
 
 ![dynamicdata](images/dynamic_data.png)
@@ -137,7 +179,7 @@ We've got our data in dynamically now, heck yes!! Did you notice though that we 
 
 Inside our code we should have a snippet that starts with `{% for item in bakery.item_set.all %}` - let's replace it with the below snippet. See how we now have a line in here with images in it? This should load our photos.
 
-```django
+```html {title="django"}
                 {% for item in bakery.item_set.all %}
                 <li><span>{{ item.name }} - ${{ item.price }}</span>
                     <br />
@@ -148,13 +190,16 @@ Inside our code we should have a snippet that starts with `{% for item in bakery
 
 Now, every time you add a new bakery via the admin, it’ll automatically show up here! This is where Django starts feeling like magic ✨
 
-Let's go ahead and check your server http://127.0.0.1:8000/ 
-
+Let's go ahead and check your server `http://127.0.0.1:8000/` 
 
 ![bootstrapstyle](images/bootstrap_style.png)
 
+{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
 
-Now let's go to admin http://127.0.0.1:8000/admin. Login with your superuser credentials. Remember in admin section (Chapter 7) where we played around and added some bakery details? It's time to add more and watch it come to life! 
+Now let's go to admin `http://127.0.0.1:8000/admin`. 
+Login with your superuser credentials. Remember in admin section (Chapter 7) where we played around and added some bakery details? It's time to add more and watch it come to life! 
+
+{{% /notice %}}
 
 That's all folks, you've built your first Django app. We're so proud of you!!!
 

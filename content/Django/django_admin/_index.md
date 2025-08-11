@@ -1,15 +1,15 @@
 ---
 title: "Django Admin"
 weight: 7
-chapter: true
+chapter: false
 ---
 
 To add, edit and delete the posts we've just modeled, we will use Django admin.
 
+{{% notice style="info" title="Code Editor" %}}
 Let's open the `bakeries/admin.py` file in the code editor and replace its contents with this:
 
-
-```python
+```python {title="django"}
 from django.contrib import admin
 
 from .models import Bakery, Item
@@ -19,10 +19,26 @@ admin.site.register(Bakery)
 admin.site.register(Item)
 
 ```
+{{% /notice %}}
 
 As you can see, we import (include) the Bakery and Item models defined in the previous chapter. To make our models visible on the admin page, we need to register the model with `admin.site.register(Bakery)` and `admin.site.register(Item)`.
 
-OK, time to look at our Bakery and Item models. Remember to run `python manage.py runserver` in the console to run the web server. Go to your browser and type the address http://127.0.0.1:8000/admin/. You will see a login page like this:
+OK, time to look at our Bakery and Item models. Remember to run `python manage.py runserver` in the console to run the web server. 
+
+{{< tabs groupid="a">}}
+{{% tab title="_**should work**_" %}}
+```sh {title="terminal"}
+python manage.py runserver
+```
+{{% /tab %}}
+{{% tab title="_**if it doesn't work**_" %}}
+```sh {title="terminal"}
+python3 manage.py runserver
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+Go to your browser and type the address `http://127.0.0.1:8000/admin/`. You will see a login page like this:
 
 ![Login page](images/login_page.png)
 
@@ -34,19 +50,28 @@ Remember, to write new commands while the web server is running, open a new term
 
 {{% /notice %}}
 
-macOS or Linux:
-```
+{{< tabs groupid="a">}}
+{{% tab title="_**macOS or Linux**_" %}}
+```sh {title="terminal"}
 (myvenv) bakery_site% python manage.py createsuperuser
 ```
-
-Windows:
+{{% /tab %}}
+{{% tab title="_**if it doesn't work**_" %}}
+```sh {title="terminal"}
+(myvenv) bakery_site% python3 manage.py createsuperuser
 ```
+{{% /tab %}}
+
+{{% tab title="_**Windows**_" %}}
+```sh {title="terminal"}
 (myvenv) ~/bakery_site$ python manage.py createsuperuser
 ```
+{{% /tab %}}
+{{< /tabs >}}
 
 When prompted, type your username (lowercase, no spaces), email address, and password. **Don't worry that you can't see the password you're typing in – that's how its supposed to be, for security.** Type it in and press `enter` to continue. The output should look like this (where the username and email should be your own ones):
 
-```
+```sh {title="terminal"}
 Username: flourpower
 Email address: hello@flourpower.com
 Password:
@@ -95,6 +120,10 @@ Now head to Item and add some items for each bakery!
 | Cinnamon Scroll     | Swirled bun with cinnamon and icing                      |
 | Cupcake             | Individual sponge cake with frosting                     |
 
+{{% notice info %}}
+
 If you want to know more about Django admin, check out Django's [documentation](https://docs.djangoproject.com/en/5.1/ref/contrib/admin/)
 
-This is probably a good moment to grab a tea or coffee to re-energize yourself. You created your first Django model – you deserve a little break!
+{{% /notice %}}
+
+This is probably a good moment to grab a tea or coffee to re-energise yourself. You created your first Django model – you deserve a little break!
