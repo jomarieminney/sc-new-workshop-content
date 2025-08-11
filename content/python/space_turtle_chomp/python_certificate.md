@@ -1,5 +1,5 @@
 ---
-title: "PDF Certificate - HTML & CSS"
+title: "PDF Certificate - Python"
 weight: 13
 draft: false
 ---

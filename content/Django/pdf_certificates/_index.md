@@ -20,12 +20,12 @@ Get your Certificate!
     <input type="hidden" name="act" value="sub" />
     <input type="hidden" name="v" value="2" />
     <input type="hidden" name="or" value="8477a0cecf939eafb8e8f74791ed2d43" />
-    <input type="hidden" name="tags" value="Completed Tutorial - Django />
+    <input type="hidden" name="tags" value="Completed Tutorial - Django" />
     <div class="_form-content">
       <div class="_form_element _x99529096 _inline-style _clear" >
-        <title class="_form-title">
+        <div class="_form-title">
           Download your Certificate of Completion!
-        </title>
+        </div>
       </div>
       <div class="_form_element _x34324125 _inline-style _clear" >
         <div class="_html-code">
