@@ -1,11 +1,10 @@
-+++
-title = "Get your Certificate!"
-weight = 110
-chapter = true
-pre = ""
-+++
+---
+title: "PDF Certificate - HTML & CSS"
+weight: 12
+draft: false
+---
 
-
+Get your Certificate!
 
 <style>@import url(https://fonts.bunny.net/css?family=raleway:400,700);</style>
 <style>
