@@ -1,36 +1,28 @@
-+++
-title = "How to Python"
-date = 2025-08-07T10:00:00+08:00
-weight = 30
-chapter = true
-pre = ""
-+++
-
-# How to Python
+---
+title: "How to Python"
+weight: 3
+chapter: false
+---
 
 {{% notice info %}}
 Part of this chapter is based on tutorials by Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
 {{% /notice %}}
 
+### Python prompt
+
 Let's write some code!
-
-## Python prompt
-
-{{% notice info %}}
-For readers at home: this part is covered in the [Python Basics: Integers, Strings, Lists, Variables and Errors](https://www.youtube.com/watch?v=MO63L4s-20U) video.
-{{% /notice %}}
 
 We want to open up a Python console, so open Terminal (on Mac) or PowerShell (on Windows) and type in `python` on Windows or `python3` on Mac/Linux and hit `enter`.
 
 <!-- {% filename %}command-line{% filename %} -->
-```bash
+```bash {title="terminal"}
 $ python3
-Python 3.5.1 (...)
+Python 3.12.4 (...)
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-## Your first Python command!
+### Your first Python command!
 
 After running the Python command, the prompt changed to `>>>`. For us this means that for now we may only use commands in the Python language. You don't have to type in `>>>` – Python will do that for you.
 
@@ -39,7 +31,7 @@ If you want to exit the Python console at any point, just type `exit()` or use t
 For now, we don't want to exit the Python console. We want to learn more about it. Let's start with something really simple. For example, try typing some math, like `2 + 3` and hit `enter`.
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> 2 + 3
 5
 ```
@@ -52,7 +44,7 @@ Nice! See how the answer popped out? Python knows math! You could try other comm
 
 To perform exponential calculation, say 2 to the power 3, we type:
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> 2 ** 3
 8
 ```
@@ -61,12 +53,12 @@ Have fun with this for a little while and then get back here.
 
 As you can see, Python is a great calculator. If you're wondering what else you can do…
 
-## Strings
+### Strings
 
 How about your name? Type your first name in quotes like this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> "Kate"
 'Kate'
 ```
@@ -76,7 +68,7 @@ You've now created your first string! It's a sequence of characters that can be 
 Strings can be strung together. Try this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> "Hi there " + "Kate"
 'Hi there Kate'
 ```
@@ -84,7 +76,7 @@ Strings can be strung together. Try this:
 You can also multiply strings with a number:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> "Kate" * 3
 'KateKateKate'
 ```
@@ -94,7 +86,7 @@ If you need to put an apostrophe inside your string, you have two ways to do it.
 Using double quotes:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> "Runnin' down the hill"
 "Runnin' down the hill"
 ```
@@ -102,7 +94,7 @@ Using double quotes:
 or escaping the apostrophe with a backslash (`\`):
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> 'Runnin\' down the hill'
 "Runnin' down the hill"
 ```
@@ -110,7 +102,7 @@ or escaping the apostrophe with a backslash (`\`):
 Nice, huh? To see your name in uppercase letters, try typing:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> "Kate".upper()
 'Kate'
 ```
@@ -120,9 +112,9 @@ You just used the `upper` __method__ on your string! A method (like `upper()`) i
 If you want to know the number of letters contained in your name, there is a __function__ for that too!
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> len("Kate")
-3
+4
 ```
 
 Wonder why sometimes you call functions with a `.` at the end of a string (like `"Kate".upper()`) and sometimes you first call a function and place the string in parentheses? Well, in some cases, functions belong to objects, like `upper()`, which can only be performed on strings. In this case, we call the function a __method__. Other times, functions don't belong to anything specific and can be used on different types of objects, just like `len()`. That's why we're giving `"Kate"` as a parameter to the `len` function.
@@ -138,12 +130,12 @@ OK, enough of strings. So far you've learned about:
 
 These are the basics of every programming language you learn. Ready for something harder?
 
-## Errors
+### Errors
 
 Let's try something new. Can we get the length of a number the same way we could find out the length of our name? Type in `len(304023)` and hit `enter`:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> len(304023)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -153,7 +145,7 @@ TypeError: object of type 'int' has no len()
 We got our first error! It says that objects of type "int" (integers, whole numbers) have no length. So what can we do now? Maybe we can write our number as a string? Strings have a length, right?
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> len(str(304023))
 6
 ```
@@ -165,21 +157,21 @@ It worked! We used the `str` function inside of the `len` function. `str()` conv
 
 > Important: we can convert numbers into text, but we can't necessarily convert text into numbers – what would `int('hello')` be anyway?
 
-## Variables
+### Variables
 
 An important concept in programming is variables. A variable is nothing more than a name for something so you can use it later. Programmers use these variables to store data, make their code more readable and so they don't have to keep remembering what things are.
 
 Let's say we want to create a new variable called `name`:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> name = "Kate"
 ```
 
 As you've noticed, your program didn't return anything like it did before. So how do we know that the variable actually exists? Simply enter `name` and hit `enter`:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> name
 'Kate'
 ```
@@ -187,7 +179,7 @@ As you've noticed, your program didn't return anything like it did before. So ho
 Yippee! Your first variable! You can always change what it refers to:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> name = "Sonja"
 >>> name
 'Sonja'
@@ -196,7 +188,7 @@ Yippee! Your first variable! You can always change what it refers to:
 You can use it in functions too:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> len(name)
 5
 ```
@@ -204,7 +196,7 @@ You can use it in functions too:
 Awesome, right? Of course, variables can be anything – numbers too! Try this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> a = 4
 >>> b = 6
 >>> a * b
@@ -214,7 +206,7 @@ Awesome, right? Of course, variables can be anything – numbers too! Try this:
 But what if we used the wrong name? Can you guess what would happen? Let's try!
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> city = "Tokyo"
 >>> ctiy
 Traceback (most recent call last):
@@ -226,13 +218,12 @@ An error! As you can see, Python has different types of errors and this one is c
 
 Play with this for a while and see what you can do!
 
-
-## The print function
+### The print function
 
 Try this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> name = 'Maria'
 >>> name
 'Maria'
@@ -244,15 +235,14 @@ When you just type `name`, the Python interpreter responds with the string *repr
 
 As we'll see later, `print()` is also useful when we want to print things from inside functions, or when we want to print things on multiple lines.
 
-
-## Lists
+### Lists
 
 Beside strings and integers, Python has all sorts of different types of objects. Now we're going to introduce one called __list__. Lists are exactly what you think they are: objects which are lists of other objects. :)
 
 Go ahead and create a list:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> []
 []
 ```
@@ -260,14 +250,14 @@ Go ahead and create a list:
 Yes, this list is empty. Not very useful, right? Let's create a list of lottery numbers. We don't want to repeat ourselves all the time, so we will put it in a variable, too:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> lottery = [3, 42, 12, 19, 30, 59]
 ```
 
 All right, we have a list! What can we do with it? Let's see how many lottery numbers there are in a list. Do you have any idea which function you should use for that?
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> len(lottery)
 6
 ```
@@ -275,14 +265,14 @@ All right, we have a list! What can we do with it? Let's see how many lottery nu
 Yes! `len()` can give you a number of objects in a list. Handy, right? Maybe we will sort it now:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> lottery.sort()
 ```
 
 This doesn't return anything, it just changed the order in which the numbers appear in the list. Let's print it out again and see what happened:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> print(lottery)
 [3, 12, 19, 30, 42, 59]
 ```
@@ -292,7 +282,7 @@ As you can see, the numbers in your list are now sorted from the lowest to highe
 Maybe we want to reverse that order? Let's do that!
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> lottery.reverse()
 >>> print(lottery)
 [59, 42, 30, 19, 12, 3]
@@ -301,7 +291,7 @@ Maybe we want to reverse that order? Let's do that!
 If you want to add something to your list, you can do this by typing this command:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> lottery.append(199)
 >>> print(lottery)
 [59, 42, 30, 19, 12, 3, 199]
@@ -310,7 +300,7 @@ If you want to add something to your list, you can do this by typing this comman
 If you want to show only the first number, you can do this by using __indexes__. An index is the number that says where in a list an item occurs. Programmers prefer to start counting at 0, so the first object in your list is at index 0, the next one is at 1, and so on. Try this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> print(lottery[0])
 59
 >>> print(lottery[1])
@@ -322,7 +312,7 @@ As you can see, you can access different objects in your list by using the list'
 To delete something from your list you will need to use __indexes__ as we learned above and the `pop()` method. Let's try an example and reinforce what we learned previously; we will be deleting the first number of our list.
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> print(lottery)
 [59, 42, 30, 19, 12, 3, 199]
 >>> print(lottery[0])
@@ -339,14 +329,16 @@ For extra fun, try some other indexes: 6, 7, 1000, -1, -6 or -1000. See if you c
 
 You can find a list of all available list methods in this chapter of the Python documentation: https://docs.python.org/3/tutorial/datastructures.html
 
-## Dictionaries
+{{% notice info %}}
+If you would like to listen to Ola explain Python basics: [Python Basics: Integers, Strings, Lists, Variables and Errors](https://www.youtube.com/watch?v=MO63L4s-20U) video.
+{{% /notice %}}
 
-> For readers at home: this part is covered in the [Python Basics: Dictionaries](https://www.youtube.com/watch?v=ZX1CVvZLE6c) video.
+### Dictionaries
 
 A dictionary is similar to a list, but you access values by looking up a key instead of a numeric index. A key can be any string or number. The syntax to define an empty dictionary is:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> {}
 {}
 ```
@@ -356,7 +348,7 @@ This shows that you just created an empty dictionary. Hurray!
 Now, try writing the following command (try substituting your own information, too):
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> participant = {'name': 'Kate', 'country': 'Australia', 'favourite_numbers': [7, 12, 91]}
 ```
 
@@ -369,7 +361,7 @@ With this command, you just created a variable named `participant` with three ke
 You can check the content of individual keys with this syntax:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> print(participant['name'])
 Kate
 ```
@@ -379,7 +371,7 @@ See, it's similar to a list. But you don't need to remember the index – just t
 What happens if we ask Python the value of a key that doesn't exist? Can you guess? Let's try it and see!
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> participant['age']
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -396,14 +388,14 @@ When should you use a dictionary or a list? Well, that's a good point to ponder.
 Dictionaries, like lists, are *mutable*, meaning that they can be changed after they are created. You can add new key–value pairs to a dictionary after it is created, like this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> participant['favourite_language'] = 'Python'
 ```
 
 Like lists, using the `len()` method on the dictionaries returns the number of key–value pairs in the dictionary. Go ahead and type in this command:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> len(participant)
 4
 ```
@@ -413,7 +405,7 @@ I hope it makes sense up to now. :) Ready for some more fun with dictionaries? R
 You can use the `pop()` method to delete an item in the dictionary. Say, if you want to delete the entry corresponding to the key `'favourite_numbers'`, type in the following command:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> participant.pop('favourite_numbers')
 [7, 12, 91]
 >>> participant
@@ -425,7 +417,7 @@ As you can see from the output, the key–value pair corresponding to the `'favo
 As well as this, you can also change a value associated with an already-created key in the dictionary. Type this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> participant['country'] = 'Germany'
 >>> participant
 {'country': 'Germany', 'favourite_language': 'Python', 'name': 'Kate'}
@@ -433,7 +425,13 @@ As well as this, you can also change a value associated with an already-created 
 
 As you can see, the value of the key `'country'` has been altered from `'Australia'` to `'Germany'`. :) Exciting? Hurrah! You just learned another amazing thing.
 
-### Summary
+{{% notice info %}}
+
+If you would like to listen to Ola explain Python dictionaries: [Python Basics: Dictionaries](https://www.youtube.com/watch?v=ZX1CVvZLE6c) video.
+
+{{% /notice %}}
+
+#### Summary
 
 Awesome! You know a lot about programming now. In this last part you learned about:
 
@@ -444,14 +442,12 @@ Awesome! You know a lot about programming now. In this last part you learned abo
 
 Excited for the next part? :)
 
-## Compare things
-
-> For readers at home: this part is covered in the [Python Basics: Comparisons](https://www.youtube.com/watch?v=7bzxqIKYgf4) video.
+### Compare things
 
 A big part of programming involves comparing things. What's the easiest thing to compare? Numbers, of course. Let's see how that works:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> 5 > 2
 True
 >>> 3 < 1
@@ -471,7 +467,7 @@ Do you wonder why we put two equal signs `==` next to each other to compare if n
 Give Python two more tasks:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> 6 >= 12 / 2
 True
 >>> 3 <= 2
@@ -488,7 +484,7 @@ False
 Awesome! Wanna do one more? Try this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> 6 > 2 and 2 < 3
 True
 >>> 3 > 2 and 2 < 1
@@ -505,7 +501,7 @@ You can give Python as many numbers to compare as you want, and it will give you
 Have you heard of the expression "comparing apples to oranges"? Let's try the Python equivalent:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> 1 > 'django'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -515,7 +511,13 @@ TypeError: unorderable types: int() > str()
 Here you see that just like in the expression, Python is not able to compare a number (`int`) and a string (`str`).
 Instead, it shows a **TypeError** and tells us the two types can't be compared together.
 
-## Boolean
+{{% notice info %}}
+
+If you would like to listen to Ola explain Python comparisons: [Python Basics: Comparisons](https://www.youtube.com/watch?v=7bzxqIKYgf4) video.
+
+{{% /notice %}}
+
+### Boolean
 
 Incidentally, you just learned about a new type of object in Python. It's called __Boolean__,  and it is probably the easiest type there is.
 
@@ -528,7 +530,7 @@ But for Python to understand this, you need to always write it as 'True' (first 
 Booleans can be variables, too! See here:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> a = True
 >>> a
 True
@@ -537,7 +539,7 @@ True
 You can also do it this way:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> a = 2 > 5
 >>> a
 False
@@ -552,10 +554,7 @@ Practice and have fun with Booleans by trying to run the following commands:
 
 Congrats! Booleans are one of the coolest features in programming, and you just learned how to use them!
 
-# Save it!
-
-> For readers at home: this part is covered in the [Python Basics: Saving files and If statement](https://www.youtube.com/watch?v=dOAg6QVAxyk) video.
-
+### Save it!
 
 So far we've been writing all our python code in the interpreter, which limits us to entering one line of code at a time. Normal programs are saved in files and executed by our programming language __interpreter__ or __compiler__. So far we've been running our programs one line at a time in the Python __interpreter__. We're going to need more than one line of code for the next few tasks, so we'll quickly need to:
 
@@ -567,7 +566,7 @@ So far we've been writing all our python code in the interpreter, which limits u
 To exit from the Python interpreter that we've been using, simply type the `exit()` function
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 >>> exit()
 $
 ```
@@ -577,7 +576,7 @@ This will put you back into the command prompt.
 Earlier, we picked out a code editor from the [code editor](../code_editor/README.md) section. We'll need to open the editor now and write some code into a new file:
 
 <!-- {% filename %}editor{% filename %} -->
-```python
+```python {title="python"}
 print('Hello, She Codes!')
 ```
 
@@ -585,8 +584,11 @@ Obviously, you're a pretty seasoned Python developer now, so feel free to write 
 
 Now we need to save the file and give it a descriptive name. Let's call the file **python_intro.py** and save it to your desktop. We can name the file anything we want, but the important part here is to make sure the file ends in __.py__. The __.py__ extension tells our operating system that this is a **Python executable file** and Python can run it. Try not to use **whitespace** in file name, you can replace space with **_**.
 
-> **Note** You should notice one of the coolest thing about code editors: colours! In the Python console, everything was the same colour; now you should see that the `print` function is a different colour from the string. This is called "syntax highlighting", and it's a really useful feature when coding. The colour of things will give you hints, such as unclosed strings or a typo in a keyword name (like the `def` in a function, which we'll see below). This is one of the reasons we use a code editor. :)
+{{% notice note %}}
 
+**Note** You should notice one of the coolest thing about code editors: colours! In the Python console, everything was the same colour; now you should see that the `print` function is a different colour from the string. This is called "syntax highlighting", and it's a really useful feature when coding. The colour of things will give you hints, such as unclosed strings or a typo in a keyword name (like the `def` in a function, which we'll see below). This is one of the reasons we use a code editor. :)
+
+{{% /notice %}}
 
 With the file saved, it's time to run it! Using the skills you've learned in the command line section, use the terminal to **change directories** to the desktop.
 
@@ -596,7 +598,7 @@ data-collapse=true ces-->
 On a Mac, the command will look something like this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```sh {title="terminal"}
 $ cd ~/Desktop
 ```
 <!--endsec-->
@@ -607,7 +609,7 @@ data-collapse=true ces-->
 On Linux, it will be like this (the word "Desktop" might be translated to your local language):
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```sh {title="terminal"}
 $ cd ~/Desktop
 ```
 
@@ -618,25 +620,29 @@ $ cd ~/Desktop
 And on Windows, it will be like this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```sh {title="terminal"}
 > cd %HomePath%\Desktop
 ```
 <!--endsec-->
 
+{{% notice tip %}}
+
 If you get stuck, just ask for help.
+
+{{% /notice %}}
 
 Now use Python to execute the code in the file like this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 Hello, She Codes!
 ```
 
-Note: on Windows 'python3' is not recognized as a command. Instead, use 'python' to execute the file:
+Note: on Windows 'python3' is not recognised as a command. Instead, use 'python' to execute the file:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 > python python_intro.py
 ```
 
@@ -644,21 +650,21 @@ Alright! You just ran your first Python program that was saved to a file. Feel a
 
 You can now move on to an essential tool in programming:
 
-## If … elif … else
+### If … elif … else
 
 Lots of things in code should be executed only when given conditions are met. That's why Python has something called __if statements__.
 
 Replace the code in your **python_intro.py** file with this:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 if 3 > 2:
 ```
 
 If we were to save and run this, we'd see an error like this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 File "python_intro.py", line 2
          ^
@@ -668,7 +674,7 @@ SyntaxError: unexpected EOF while parsing
 Python expects us to give further instructions to it which are executed if the condition `3 > 2` turns out to be true (or `True` for that matter). Let’s try to make Python print “It works!”. Change your code in your **python_intro.py** file to this:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 if 3 > 2:
     print('It works!')
 ```
@@ -678,19 +684,19 @@ Notice how we've indented the next line of code by 4 spaces? We need to do this 
 Save it and give it another run:
 
 <!-- {% filename %}command-line{% filename %} -->
-```python
+```python {title="python"}
 $ python3 python_intro.py
 It works!
 ```
 
-Note: Remember that on Windows, 'python3' is not recognized as a command. From now on, replace 'python3' with 'python' to execute the file.
+Note: Remember that on Windows, 'python3' is not recognised as a command. From now on, replace 'python3' with 'python' to execute the file.
 
 ### What if a condition isn't True?
 
 In previous examples, code was executed only when the conditions were True. But Python also has `elif` and `else` statements:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 if 5 > 2:
     print('5 is indeed greater than 2')
 else:
@@ -700,7 +706,7 @@ else:
 When this is run it will print out:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 5 is indeed greater than 2
 ```
@@ -708,7 +714,7 @@ $ python3 python_intro.py
 If 2 were a greater number than 5, then the second command would be executed. Easy, right? Let's see how `elif` works:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 name = 'Sonja'
 if name == 'Kate':
     print('Hey Kate!')
@@ -721,7 +727,7 @@ else:
 and executed:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 Hey Sonja!
 ```
@@ -731,7 +737,7 @@ See what happened there? `elif` lets you add extra conditions that run if the pr
 You can add as many `elif` statements as you like after your initial `if` statement. For example:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 volume = 57
 if volume < 20:
     print("It's kinda quiet.")
@@ -750,19 +756,25 @@ else:
 Python runs through each test in sequence and prints:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 Perfect, I can hear all the details
 ```
 
-## Comments
+{{% notice info %}}
+
+If you would like to listen to Ola explain how to save files in Python and all about if statements: [Python Basics: Saving files and If statement](https://www.youtube.com/watch?v=dOAg6QVAxyk) video.
+
+{{% /notice %}}
+
+### Comments
 
 Comments are lines beginning with `#`. You can write whatever you want after the `#` and Python will ignore it. Comments can make your code easier for other people to understand.
 
 Let's see how that looks:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 # Change the volume if it's too loud or too quiet
 if volume < 20 or volume > 80:
     volume = 50
@@ -771,8 +783,7 @@ if volume < 20 or volume > 80:
 
 You don't need to write a comment for every line of code, but they are useful for explaining why your code is doing something, or providing a summary when it's doing something complex.
 
-
-### Summary
+#### Summary
 
 In the last few exercises you learned about:
 
@@ -784,16 +795,14 @@ In the last few exercises you learned about:
 
 Time for the last part of this chapter!
 
-## Your own functions!
-
-> For readers at home: this part is covered in the [Python Basics: Functions](https://www.youtube.com/watch?v=5owr-6suOl0) video.
+### Your own functions!
 
 Remember functions like `len()` that you can execute in Python? Well, good news – you will learn how to write your own functions now!
 
 A function is a sequence of instructions that Python should execute. Each function in Python starts with the keyword `def`, is given a name, and can have some parameters. Let's start with an easy one. Replace the code in **python_intro.py** with the following:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 def hi():
     print('Hi there!')
     print('How are you?')
@@ -808,7 +817,7 @@ You may wonder why we've written the name of the function at the bottom of the f
 Let's run this now and see what happens:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 Hi there!
 How are you?
@@ -822,14 +831,14 @@ Note: if it didn't work, don't panic! The output will help you to figure why:
 Let's build our first function with parameters. We will use the previous example – a function that says 'hi' to the person running it – with a name:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 def hi(name):
 ```
 
 As you can see, we now gave our function a parameter that we called `name`:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 def hi(name):
     if name == 'Kate':
         print('Hi Kate!')
@@ -844,7 +853,7 @@ hi()
 Remember: The `print` function is indented four spaces within the `if` statement. This is because the function runs when the condition is met. Let's see how it works now:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 Traceback (most recent call last):
 File "python_intro.py", line 10, in <module>
@@ -857,14 +866,14 @@ It tells us that the function `hi()` (the one we defined) has one required argum
 Let's fix it at the bottom of the file:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 hi("Kate")
 ```
 
 And run it again:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 Hi Kate!
 ```
@@ -872,14 +881,14 @@ Hi Kate!
 And if we change the name?
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 hi("Sonja")
 ```
 
 And run it:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 Hi Sonja!
 ```
@@ -887,7 +896,7 @@ Hi Sonja!
 Now, what do you think will happen if you write another name in there? (Not Kate or Sonja.) Give it a try and see if you're right. It should print out this:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 Hi anonymous!
 ```
 
@@ -896,7 +905,7 @@ This is awesome, right? This way you don't have to repeat yourself every time yo
 Let's do something smarter – there are more names than two, and writing a condition for each would be hard, right?
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 def hi(name):
     print('Hi ' + name + '!')
 
@@ -906,16 +915,20 @@ hi("Rachel")
 Let's call the code now:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 Hi Rachel!
 ```
 
 Congratulations! You just learned how to write functions! :)
 
-## Loops
+{{% notice info %}}
 
-> For readers at home: this part is covered in the [Python Basics: For Loop](https://www.youtube.com/watch?v=aEA6Rc86HF0) video.
+If you would like to listen to Ola explain Python functions: [Python Basics: Functions](https://www.youtube.com/watch?v=5owr-6suOl0) video.
+
+{{% /notice %}}
+
+### Loops
 
 This is the last part already. That was quick, right? :)
 
@@ -924,14 +937,14 @@ Programmers don't like to repeat themselves. Programming is all about automating
 Still remember lists? Let's do a list of girls:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 girls = ['Rachel', 'Monica', 'Phoebe', 'Kate', 'You']
 ```
 
 We want to greet all of them by their name. We have the `hi` function to do that, so let's use it in a loop:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 for name in girls:
 ```
 
@@ -940,7 +953,7 @@ The ```for``` statement behaves similarly to the ```if``` statement; code below 
 Here is the full code that will be in the file:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 def hi(name):
     print('Hi ' + name + '!')
 
@@ -953,7 +966,7 @@ for name in girls:
 And when we run it:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 $ python3 python_intro.py
 Hi Rachel!
 Next girl
@@ -972,7 +985,7 @@ As you can see, everything you put inside a `for` statement with an indent will 
 You can also use `for` on numbers using the `range` function:
 
 <!-- {% filename %}python_intro.py{% filename %} -->
-```python
+```python {title="python"}
 for i in range(1, 6):
     print(i)
 ```
@@ -980,7 +993,7 @@ for i in range(1, 6):
 Which would print:
 
 <!-- {% filename %}command-line{% filename %} -->
-```
+```python {title="python"}
 1
 2
 3
@@ -992,7 +1005,13 @@ Which would print:
 
 Note that the second of these two numbers is not included in the list that is output by Python (meaning `range(1, 6)` counts from 1 to 5, but does not include the number 6). That is because "range" is half-open, and by that we mean it includes the first value, but not the last.
 
-## Summary
+{{% notice info %}}
+
+If you would like to listen to Ola explain Python loops: [Python Basics: For Loop](https://www.youtube.com/watch?v=aEA6Rc86HF0) video.
+
+{{% /notice %}}
+
+### Summary
 
 That's it. __You totally rock!__ This was a tricky chapter, so you should feel proud of yourself. We're definitely proud of you for making it this far!
 

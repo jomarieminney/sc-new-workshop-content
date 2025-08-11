@@ -1,14 +1,11 @@
-+++
-title = "Python Game"
-date = 2025-08-07T10:00:00+08:00
-weight = 10
-chapter = true
-pre = "🥬 🐢 "
-+++
+---
+title: "Python Game"
+weight: 2
+chapter: false
+pre: "🥬 🐢 "
+---
 
-### Python Game
-
-# Building a Game with Python
+## Building a Game with Python
 
 ![space turtle chomp](images/Space%20Turtle%20Chomp.png)
 
