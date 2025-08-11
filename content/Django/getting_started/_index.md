@@ -1,16 +1,19 @@
 ---
-title: "Installation"
+title: "Getting Started"
 weight: 2
-chapter: true
+chapter: false
 ---
 
 In this tutorial you will be building a Bakery app. In order to do that, as you go through the tutorial you'll be instructed on how to install various software on your computer and set up some online accounts as needed if you wish to put your site live on the internet.
 
 ---
 
-### Brief intro to the command line
+{{% notice info %}}
+**Brief intro to the command line**
 
 Many of the steps below reference the `console`, `terminal`, `command window`, or `command line` -- these all mean the same thing: a window on your computer where you can enter commands. For now, the main thing you need to know is how to open a command window and what it looks like:
+
+{{% /notice %}}
 
 #### Opening the command line
 

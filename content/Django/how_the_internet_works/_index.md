@@ -1,7 +1,7 @@
 ---
 title: "How the Internet Works"
 weight: 1
-chapter: true
+chapter: false
 ---
 
 You probably use the internet every day — but have you ever wondered what actually happens when you type an address like `https://shecodes.com.au` into your browser and hit `enter`?
@@ -12,7 +12,11 @@ A website is really just a collection of files stored on a hard drive — just l
 But these HTML files need to live somewhere. That’s where servers come in — powerful computers designed to store and deliver (or "serve") data. Unlike your personal computer, servers don’t need screens, keyboards, or mice. Their one job is to wait for requests and send back the right files.
 That’s why they’re called servers — they serve up websites.
 
+{{% notice info %}}
+
 So what actually happens when you visit a site like `shecodes.com.au`?
+
+{{% /notice %}}
 
 It’s kind of like sending a letter that says:
  "Dear She Codes, please send me your website!"
@@ -28,9 +32,13 @@ Instead of a street address with a city and postcode, websites use IP addresses 
 
 Just like a physical letter needs certain things to be delivered properly — like an address, a stamp, and the right language — your computer messages do too. That’s where HTTP (Hypertext Transfer Protocol) comes in. It’s the “language” your browser and the server use to talk to each other and make sure everything gets where it’s supposed to go.
 
+{{% notice info %}}
+
 So, when someone visits your website, here’s what happens:
-1. Their computer sends a request to your server.
-2. Your server reads the request and sends back the website data — a response.
+1. Their computer sends a **request** to your server.
+2. Your server reads the request and sends back the website data — a **response**.
+
+{{% /notice %}}
 
 Now, since this is a Django tutorial, you’re probably wondering: Where does Django fit in?
 

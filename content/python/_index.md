@@ -1,6 +1,6 @@
 ---
 title: "Python"
-weight: 4
+weight: 3
 pre: "<i class='fab fa-python'></i>&nbsp; "
 ---
 
