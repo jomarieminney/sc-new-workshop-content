@@ -67,8 +67,7 @@ content/
 ├── html_and_css/          # HTML & CSS workshop materials
 ├── javascript/            # JavaScript Cupcake Smash game tutorial
 ├── python/               # Python programming workshop
-├── django/               # Django web development tutorial
-└── previous/             # Archived tutorials from previous workshops
+└── django/               # Django web development tutorial
 ```
 
 ## Contributing
