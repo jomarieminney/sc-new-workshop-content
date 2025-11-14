@@ -31,4 +31,4 @@ Laravel is a coding framework built on the PHP programming language. In order to
 
 Laravel has its own desktop application that is optimised for Laravel development, called Laravel Herd. Our first step will be to install Herd to set up our own local development environment.
 
-Next: [Install Herd](/laravel/getting_started/installing_herd/)
+Next: [Install Herd](/laravel/installing_herd/)

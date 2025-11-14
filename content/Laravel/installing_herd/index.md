@@ -35,4 +35,5 @@ __Option 3__
 {{% /tab %}}
 {{< /tabs >}}
 
-Next: [Create Your Site](/laravel/getting_started/creating_first_site/)
+Next: [Create Your Site](/laravel/creating_first_site/)
+
