@@ -13,7 +13,7 @@ We'll be building an application called Win Wall - a virtual version of a She Co
 A preview of the end result is below:
 
 <!-- Update this screenshot once we have one -->
-![](winwall.gif)
+![](images/winwall.gif)
 
 **New to coding?** Watch the video below first for a quick intro to web languages and how they work together to create a web application.
 

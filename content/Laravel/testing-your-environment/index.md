@@ -11,18 +11,18 @@ Now that we have our site up and running, let's check that everything is running
 If you have an error and don't see something similar to the below when opening in browser, contact a mentor to help you troubleshoot.
 {{% /notice %}}
 
-![Default Starter Kit Home Page](images/StarterKitDefaultHomePage.png)
+![Default Starter Kit Home Page](../images/StarterKitDefaultHomePage.png)
 
 ### Testing our authentication
 One of the best things about Laravel is that it comes with secure, configurable authentication (the ability for users to log in with their own dedicated user credentials) out of the box. We can test this by hitting the **Register** button in the top right of our page. If everything is working correctly, this should take you to a Register page that looks something like this:
 
-![Register Page](images/RegisterPage.png)
+![Register Page](../images/RegisterPage.png)
 
 {{% notice note %}}
 If you get an error page similar to the below when attempting to register, it means that Herd was unable to start one of the required bits to make our project fully work in the browser. 
 
 
-![Error Screenshot](images/RegisterButtonError.png)
+![Error Screenshot](../images/RegisterButtonError.png)
 
 
 Don't freak out! It's time to feel like a hacker 😎
@@ -47,9 +47,7 @@ _**Note:** Clicking the Terminal Open button from inside Herd will open Powershe
 - Type the command `npm run dev` and hit Return/Enter
 
 {{% /tab %}}
-{{% tab title="_**Linux**_" %}}
-?????
-{{% /tab %}}
+
 {{< /tabs >}}
 
 {{% /notice %}}
