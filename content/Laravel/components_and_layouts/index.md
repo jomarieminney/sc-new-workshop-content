@@ -36,7 +36,7 @@ Just like components we create ourselves, Flux components can still be customise
 
 Let's add some professional-looking login and register buttons to our new home page. We'll use Flux's button components which are already nicely styled.
 
-In your `home.blade.php` file, add the following code inside the `<body>` tag:
+In your `home.blade.php` file, add the following code inside the `<body>` tag underneath your `<h1>` element:
 
 ```blade
 <div class="flex gap-4">
@@ -84,4 +84,4 @@ To achieving the same look with regular HTML:
 
 Much simpler with Flux!
 
-
+Next: [Working with the Database](/laravel/working_with_database/)
